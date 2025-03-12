@@ -1,0 +1,556 @@
+.collapse:not(.collapse_show) {
+   display: none;
+}
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   font-weight: 500;
+}
+.container {
+   margin: 0 auto;
+   padding: 0 var(--container);
+}
+.main {
+   flex: 1;
+   padding-top: var(--header);
+}
+
+.circle {
+   --size: 32px;
+   flex: 0 0 var(--size);
+   width: var(--size);
+   height: var(--size);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+label {
+   cursor: pointer;
+}
+.h1 {
+   @include h1;
+   @media (max-width: $tablet) {
+      @include h1-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h1-mobile;
+   }
+}
+.h2 {
+   @include h2;
+   @media (max-width: $tablet) {
+      @include h2-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h2-mobile;
+   }
+}
+.h3 {
+   @include h3;
+}
+.h4 {
+   @include h4;
+   @media (max-width: $mobile) {
+      @include h4-mobile;
+   }
+}
+.h5 {
+   @include h5;
+}
+.txt-13 {
+   @include text-13;
+}
+.body-text {
+   @include body-text;
+}
+.price-text {
+   @include price;
+}
+.tag-text {
+   @include tag;
+}
+.caption-text {
+   @include caption;
+}
+.btn {
+   height: 44px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 16px;
+   border-radius: 4px;
+   @include text-13;
+   background-color: $black;
+   color: $white;
+   width: fit-content;
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+   transition: $transition;
+   &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 10px;
+      background-color: $black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+   }
+   p,
+   span {
+      // transition: height 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+      //    width 0.28s cubic-bezier(0.23, 1, 0.32, 1),
+      //    translate 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+      //    transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+      //    left 0.28s cubic-bezier(0.23, 1, 0.32, 1),
+      //    right 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+         width 0.28s cubic-bezier(0.23, 1, 0.32, 1),
+         left 0.28s cubic-bezier(0.23, 1, 0.32, 1),
+         right 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+   }
+   p:nth-child(2) {
+      border-radius: 4px;
+      position: absolute;
+      height: 0;
+      width: 80%;
+      left: 10%;
+      right: 10%;
+      background-color: $black-70;
+      color: $white;
+      bottom: 10%;
+      z-index: 1;
+      transform-origin: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      span {
+         transform: translate3d(0, 100%, 0) rotateX(45deg);
+         transform-origin: 50% 100%;
+      }
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         width: 100%;
+         background-color: $black-70;
+         height: 13px;
+         bottom: 0;
+         left: 0;
+         z-index: 1;
+      }
+   }
+   &:not(.disabled) {
+      @media (hover: hover) {
+         &:hover {
+            p:nth-child(1) {
+               translate: 0 -100%;
+            }
+            p:nth-child(2) {
+               height: 100%;
+               width: 100%;
+               bottom: 0;
+               left: 0;
+               right: 0;
+               translate: 0 0;
+               span {
+                  transform: translate3d(0, 0, 0) rotateX(0);
+               }
+            }
+         }
+      }
+      &:active {
+         p:nth-child(1) {
+            translate: 0 -100%;
+         }
+         p:nth-child(2) {
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            translate: 0 0;
+            span {
+               transform: translate3d(0, 0, 0) rotateX(0);
+            }
+         }
+      }
+   }
+   &.disabled {
+      pointer-events: none;
+      background-color: $black-5;
+      color: $black-15;
+      &::before {
+         display: none;
+      }
+   }
+   &.white-on-dark {
+      background-color: $white;
+      color: $black;
+      &::before {
+         background-color: $white;
+      }
+      p:nth-child(2) {
+         background-color: $orange;
+         color: $black;
+         &::after {
+            background-color: $orange;
+         }
+      }
+   }
+   &.white-on-orange {
+      background-color: $white;
+      color: $black;
+      &::before {
+         background-color: $white;
+      }
+      p:nth-child(2) {
+         background-color: $black;
+         color: $white;
+         &::after {
+            background-color: $black;
+         }
+      }
+   }
+   &.orange {
+      background-color: $orange;
+      color: $black;
+      &::before {
+         background-color: $orange;
+      }
+      p:nth-child(2) {
+         background-color: $black;
+         color: $white;
+         &::after {
+            background-color: $black;
+         }
+      }
+   }
+   &.transparent {
+      border: 1px solid $black-15;
+      background-color: #bebebe;
+      color: $black;
+      &::before {
+         background-color: #bebebe;
+      }
+      p:nth-child(2) {
+         background-color: $black;
+         color: $white;
+         &::after {
+            background-color: $black;
+         }
+      }
+      @media (hover: hover) {
+         &:hover {
+            border-color: transparent;
+         }
+      }
+      &:active {
+         border-color: transparent;
+      }
+   }
+}
+.icon-btn {
+   width: 32px;
+   height: 32px;
+   flex: 0 0 32px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 4px;
+   background-color: $orange;
+   overflow: hidden;
+   position: relative;
+   &::after {
+      border-radius: 4px;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 0;
+      transition: $transition cubic-bezier(0.23, 1, 0.32, 1);
+      background-color: $black;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+   }
+   svg,
+   img {
+      position: relative;
+      z-index: 2;
+   }
+   .white {
+      background-color: $white;
+   }
+   @media (hover: hover) {
+      &:hover {
+         &::after {
+            height: 100%;
+         }
+      }
+   }
+}
+.app-select {
+   max-width: 220px;
+   margin: 0 auto;
+   width: 100%;
+   position: relative;
+   &.open {
+      .select {
+         &__title {
+            background-color: $black;
+            color: $white;
+            svg {
+               rotate: 180deg;
+               path {
+                  fill: $white;
+               }
+            }
+         }
+         &__content {
+            opacity: 1;
+            pointer-events: all;
+         }
+         &__back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+         }
+      }
+   }
+   .select {
+      &__title {
+         position: relative;
+         z-index: 1;
+         transition: $transition;
+         cursor: pointer;
+         border-radius: 4px;
+         background-color: $white;
+         width: 100%;
+         height: 48px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0 12px;
+         color: #000;
+         font-family: $fontIntr;
+         font-size: 13px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 150%; /* 19.5px */
+         letter-spacing: -0.143px;
+         text-transform: uppercase;
+         span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            // width: 50%;
+         }
+         svg {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+            transition: $transition;
+            transform-origin: center;
+            translate: 0 -2px;
+         }
+         @media (hover: hover) {
+            &:hover {
+               background-color: $black;
+               color: $white;
+               svg path {
+                  fill: $white;
+               }
+            }
+         }
+      }
+      &__content {
+         padding: 24px;
+         transition: $transition;
+         opacity: 0;
+         pointer-events: none;
+         translate: 0 12px;
+         position: absolute;
+         top: 100%;
+         left: 0;
+         border-radius: 8px;
+         border: 1px solid var(--white-55, rgba(255, 255, 255, 0.55));
+         background: var(--white-35, rgba(255, 255, 255, 0.35));
+         /* blur 16 */
+         backdrop-filter: blur(8px);
+         width: 280px;
+      }
+      &__list {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: 40px;
+         row-gap: 8px;
+      }
+      &__item {
+         cursor: pointer;
+         color: var(--black-100, #182126);
+         font-family: "TT Firs Neue";
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 450;
+         line-height: 150%; /* 21px */
+         letter-spacing: -0.14px;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         position: relative;
+         &.selected {
+            &::before {
+               background-color: $black;
+            }
+         }
+         &::before {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            flex: 0 0 14px;
+            background-color: $white;
+            border-radius: 2px;
+            transition: $transition;
+         }
+         &::after {
+            content: "";
+            transition: $transition;
+
+            display: block;
+            width: 14px;
+            height: 14px;
+            flex: 0 0 14px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            translate: 0 -50%;
+            border-radius: 2px;
+            background: url(../img/icons/check.svg) center / contain no-repeat;
+         }
+      }
+   }
+}
+.app-checkbox {
+   input {
+      display: none;
+   }
+   & > div {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      border-radius: 2px;
+      border: 1px solid var(--black-30, #d9d9d9);
+      background: #fff;
+      transition: $transition;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::after {
+         content: "";
+         display: block;
+         width: 16px;
+         height: 16px;
+         flex: 0 0 16px;
+         background: url(../img/icons/check.svg) center / contain no-repeat;
+      }
+   }
+   &:has(input:checked) {
+      & > div {
+         background-color: $black;
+         border-color: $black;
+      }
+   }
+}
+.app-input {
+   position: relative;
+   input {
+      width: 100%;
+      height: 44px;
+      padding-left: 8px;
+      padding-right: 4px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      font-family: $fontIntr;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 16.8px */
+      text-transform: uppercase;
+      color: $black;
+      &::placeholder {
+         color: rgba(0, 0, 0, 0.35);
+      }
+   }
+   &_with-button {
+      input {
+         padding-right: 40px;
+      }
+   }
+   .icon-btn {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      translate: 0 -50%;
+   }
+}
+.link {
+   white-space: nowrap;
+   color: $black;
+   transition: 0.5s;
+   position: relative;
+   &:hover {
+      &::after {
+         transform-origin: left;
+         transform: scaleX(1) rotate(0.001deg);
+      }
+   }
+   &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      background-color: $black;
+      transition: 0.5s transform, 0.5s color;
+      transform: scaleX(0) rotate(0.001deg);
+      transform-origin: right;
+   }
+}
+.pc {
+   @media (max-width: $tablet) {
+      display: none;
+   }
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.tablet {
+   display: none;
+   @media (max-width: $tablet) {
+      display: block;
+   }
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.mobile {
+   display: none;
+   @media (max-width: $tablet) {
+      display: none;
+   }
+   @media (max-width: $mobile) {
+      display: block;
+   }
+}

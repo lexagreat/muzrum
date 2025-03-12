@@ -1,0 +1,170 @@
+$tablet: 1024px;
+$mobile: 568px;
+$fontFirs: "TT Firs Neue";
+$fontIntr: "TT Intrphss Pr Mn Trl Vr";
+
+$transition: 0.4s;
+body {
+   font-family: $fontFirs;
+   --header: 64px;
+   --container: calc((100vw - 1400px) / 2);
+   @media (max-width: 1440px) {
+      --container: 20px;
+   }
+   @media (max-width: $tablet) {
+      --header: 72px;
+      --container: 20px;
+   }
+   @media (max-width: $mobile) {
+      --container: 12px;
+      --header: 44px;
+   }
+}
+
+//colors
+$orange: #ff8522;
+$orange-dark: #d65717;
+$grey: #d6d6d6;
+$light-grey: #f2f2f2;
+$black: #182126;
+$black-70: #4d4d4d;
+$black-50: #00000080;
+$black-35: #00000059;
+$black-15: #00000026;
+$black-5: #0000000d;
+$bg-light: #fcfcfc;
+$white: #fff;
+$white-85: #ffffffd9;
+$white-70: #ffffffb2;
+$white-55: #ffffff8c;
+$white-35: #ffffff59;
+$white-25: #ffffff40;
+$white-12: #ffffff1f;
+
+//fonts
+
+@mixin h1 {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 65px;
+   line-height: 100%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h1-tablet {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 60px;
+   line-height: 100%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h1-mobile {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 40px;
+   line-height: 100%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h2 {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 50px;
+   line-height: 105%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h2-tablet {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 46px;
+   line-height: 105%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h2-mobile {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 30px;
+   line-height: 105%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h3 {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 40px;
+   line-height: 100%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h4 {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 28px;
+   line-height: 114.99999999999999%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h4-mobile {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 22px;
+   line-height: 114.99999999999999%;
+   letter-spacing: -1%;
+   vertical-align: middle;
+}
+@mixin h5 {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 20px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+
+@mixin body-text {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 14px;
+   line-height: 150%;
+   letter-spacing: -1%;
+}
+@mixin text-16 {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 16px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+}
+@mixin price {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 15px;
+   line-height: 150%;
+   letter-spacing: -1%;
+}
+@mixin text-13 {
+   font-family: $fontIntr;
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 150%;
+   letter-spacing: 0%;
+   text-transform: uppercase;
+}
+@mixin tag {
+   font-family: $fontIntr;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 100%;
+   letter-spacing: -1%;
+   text-transform: uppercase;
+}
+@mixin caption {
+   font-family: $fontFirs;
+   font-weight: 450;
+   font-size: 12px;
+   line-height: 140%;
+   letter-spacing: 0%;
+}
