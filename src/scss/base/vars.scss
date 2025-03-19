@@ -1,23 +1,26 @@
 $tablet: 1024px;
 $mobile: 568px;
-$fontFirs: "TT Firs Neue";
-$fontIntr: "TT Intrphss Pr Mn Trl Vr";
+$fontFirs: "TT-Firs-Neue";
+$fontIntr: "TT_Interphases_Pro";
 
 $transition: 0.4s;
 body {
    font-family: $fontFirs;
    --header: 64px;
    --container: calc((100vw - 1400px) / 2);
+   --sectionMargin: 124px;
    @media (max-width: 1440px) {
       --container: 20px;
    }
    @media (max-width: $tablet) {
       --header: 72px;
       --container: 20px;
+      --sectionMargin: 98px;
    }
    @media (max-width: $mobile) {
       --container: 12px;
       --header: 44px;
+      --sectionMargin: 80px;
    }
 }
 
@@ -129,7 +132,7 @@ $white-12: #ffffff1f;
    font-weight: 450;
    font-size: 14px;
    line-height: 150%;
-   letter-spacing: -1%;
+   letter-spacing: -0.14px;
 }
 @mixin text-16 {
    font-family: $fontFirs;

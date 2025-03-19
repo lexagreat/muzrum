@@ -1,0 +1,115 @@
+.social-section {
+   padding-top: var(--sectionMargin);
+   padding-bottom: var(--sectionMargin);
+   // .social-section__wrapper
+
+   &__wrapper {
+      display: flex;
+      gap: 12px;
+      @media (max-width: $tablet) {
+         flex-direction: column;
+         gap: 4px;
+      }
+   }
+
+   // .social-section__content
+
+   &__content {
+      flex: 1;
+      border-radius: 8px;
+      border: 1px solid var(--black-5, rgba(0, 0, 0, 0.05));
+      background: var(--white-100, #fff);
+
+      padding: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      @media (max-width: 1440px) {
+         padding: calc(120 / 1440 * 100vw);
+      }
+      @media (max-width: $tablet) {
+         padding: 80px 123px;
+      }
+      @media (max-width: $mobile) {
+         padding: 20px;
+         padding-top: 32px;
+         gap: 24px;
+      }
+   }
+
+   // .social-section__filters
+
+   &__filters {
+      display: flex;
+      gap: 24px;
+      @media (max-width: $mobile) {
+         gap: 12px;
+      }
+      input {
+         display: none;
+      }
+      label {
+         color: $black-15;
+         transition: $transition;
+         &:has(input:checked) {
+            color: $black;
+         }
+         @media (hover: hover) {
+            &:hover {
+               color: $black-50;
+            }
+         }
+         @media (max-width: $tablet) {
+            @include h2;
+         }
+         @media (max-width: $mobile) {
+            @include h2-mobile;
+         }
+      }
+   }
+
+   // .social-section__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .btn {
+         width: 140px;
+         @media (max-width: $mobile) {
+            width: 100%;
+         }
+      }
+      @media (max-width: $mobile) {
+         gap: 35px;
+      }
+   }
+
+   // .social-section__visual
+
+   &__visual {
+      flex: 0 0 576px;
+      border-radius: 8px;
+      background: var(--brand-light-gray, #f2f2f2);
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      padding-top: 50px;
+      img {
+         max-height: 80%;
+      }
+      @media (max-width: 1440px) {
+         flex: 0 0 calc(356px + 220 * ((100vw - 1024px) / (1440 - 1024)));
+      }
+      @media (max-width: $tablet) {
+         padding-top: 80px;
+         flex: unset;
+      }
+      @media (max-width: $mobile) {
+         padding-top: 56px;
+         img {
+            max-width: 240px;
+         }
+      }
+   }
+}

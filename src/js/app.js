@@ -10,23 +10,25 @@ if (document.querySelectorAll("[data-phone]").length) {
 }
 const body = document.body;
 gsap.registerPlugin(ScrollTrigger);
-const lenis = new Lenis({
-   duration: 0.4,
-   smooth: true,
-   direction: "vertical",
-   // lerp: 0.05,
-});
-window.lenis = lenis;
+// const lenis = new Lenis({
+//    duration: 0.4,
+//    smooth: true,
+//    direction: "vertical",
+//    // lerp: 0.05,
+// });
+// window.lenis = lenis;
 
-function raf(time) {
-   lenis.raf(time);
-   requestAnimationFrame(raf);
-}
+// function raf(time) {
+//    lenis.raf(time);
+//    requestAnimationFrame(raf);
+// }
 
-requestAnimationFrame(raf);
+// requestAnimationFrame(raf);
 document.addEventListener("DOMContentLoaded", () => {
    headerWork();
    homePage();
+   productCards();
+   footer();
 });
 function headerWork() {
    const header = document.querySelector(".header");
@@ -125,6 +127,29 @@ function homePage() {
          banner.classList.add("hidden");
       };
    }
+   function catalog() {
+      const cards = document.querySelectorAll(".home-catalog__item");
+      if (!cards.length) return;
+      const arrows = document.querySelectorAll(
+         ".home-catalog .home-catalog__arrow"
+      );
+      cards.forEach((card, cardIndex) => {
+         let currentArrow = arrows[cardIndex];
+         card.onmouseenter = (e) => {
+            // console.log("enter", e);
+            currentArrow.classList.add("active");
+         };
+         card.onmousemove = (e) => {
+            // console.log("move", e);
+            currentArrow.style.left = `${e.offsetX}px`;
+            currentArrow.style.top = `${e.offsetY}px`;
+         };
+         card.onmouseleave = (e) => {
+            // console.log("leave", e);
+            currentArrow.classList.remove("active");
+         };
+      });
+   }
    gsap.to(".home-hero__bg", {
       scrollTrigger: {
          trigger: ".home-page", // элемент, который должен запускать анимацию
@@ -135,9 +160,284 @@ function homePage() {
       },
       opacity: 1,
    });
-   hero();
-}
+   function recommend() {
+      const links = document.querySelectorAll(".home-recommend__links a");
+      if (!links.length) return;
+      const images = document.querySelectorAll(".home-recommend__images > div");
+      const videos = document.querySelectorAll(".home-recommend__video > div");
+      links.forEach((link, index) => {
+         link.onmouseenter = () => {
+            images.forEach((image, i) => {
+               if (i > index) {
+                  image.classList.remove("active");
+               }
+            });
+            videos.forEach((video, i) => {
+               video.classList.remove("active");
+            });
+            links.forEach((item, i) => {
+               item.classList.remove("active");
+            });
+            images[index].classList.add("active");
+            videos[index].classList.add("active");
+            link.classList.add("active");
+         };
+      });
+   }
+   function brands() {
+      // Выбираем контейнер с изображениями
+      const marquee = document.querySelector(".home-brands .marquee");
+      if (!marquee) return;
+      const marqueeHeight = marquee.offsetHeight / 2; // Высота половины контента (для бесшовного эффекта)
+      const marqueeWidth = marquee.offsetWidth / 2; // Ширина половины контента (для бесшовного эффекта)
 
+      // Анимация с помощью GSAP
+      if (window.innerWidth > 1024) {
+         gsap.to(marquee, {
+            y: -marqueeHeight, // Прокручиваем вверх на половину высоты
+            duration: 10, // Длительность анимации
+            ease: "linear", // Линейное движение
+            repeat: -1, // Бесконечный повтор
+         });
+      } else {
+         gsap.to(marquee, {
+            x: -marqueeWidth, // Прокручиваем влево на половину ширины
+            duration: 10, // Длительность анимации
+            ease: "linear", // Линейное движение
+            repeat: -1, // Бесконечный повтор
+         });
+      }
+   }
+   hero();
+   catalog();
+   recommend();
+   productSlider(".home-first");
+   productSlider(".home-second");
+   brands();
+   reviews();
+   blogCards();
+   tabs('[name="social"]', ".social-tab");
+}
+function productSlider(selector) {
+   let selectedItem = document.querySelector(`${selector} .swiper`);
+   if (!selectedItem) return;
+   let swiper = new Swiper(selectedItem, {
+      slidesPerView: "auto",
+      spaceBetween: 8,
+      pagination: {
+         el: `${selector} .swiper-pagination`,
+         type: "progressbar",
+      },
+      breakpoints: {
+         1025: {
+            slidesPerView: 4,
+            spaceBetween: 12,
+         },
+         569: {
+            slidesPerView: 2,
+            spaceBetween: 12,
+         },
+      },
+   });
+}
+function productCards() {
+   const cards = document.querySelectorAll(".product-card");
+   if (!cards.length) return;
+   cards.forEach((card, index) => {
+      let inputSelector = card.querySelector(".product-card__color input").name;
+      tabs(`[name=${inputSelector}]`, `[data-tab-name=${inputSelector}]`);
+   });
+}
+function reviews() {
+   let section = document.querySelector(".reviews-section");
+   if (!section) return;
+   const prevBtn = document.querySelector(".reviews-section__navigation .prev");
+   const nextBtn = document.querySelector(".reviews-section__navigation .next");
+
+   const textElem = document.querySelector(".reviews-section__text");
+
+   let currentIndex = 0;
+   let reviewsArray = [
+      {
+         text: "«Купила Korg c1 Air коричневый. Инструментом довольна, как и самим магазином с его внимательными консультантами. И да, не обманщики)) не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо! не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо!",
+         author: {
+            name: "Екатерина Незнанова",
+            date: "29 сент 2024",
+         },
+         rating: 4,
+      },
+      {
+         text: "Инструментом довольна, как и самим магазином с его внимательными консультантами. И да, не обманщики)) не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо! не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо!",
+         author: {
+            name: "Екатерина",
+            date: "28 сент 2024",
+         },
+         rating: 5,
+      },
+      {
+         text: "И да, не обманщики)) не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо! не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо!",
+         author: {
+            name: "иван иванов",
+            date: "29 окт 2024",
+         },
+         rating: 4,
+      },
+      {
+         text: "«Купила Korg c1 Air коричневый. Большое спасибо!",
+         author: {
+            name: "Василиса Незнанова",
+            date: "29 сент 2023",
+         },
+         rating: 3,
+      },
+      {
+         text: "И да, не обманщики)) не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо! не бойтесь заказывать доставку в регион, хоть это и потребует полной предоплаты. Большое спасибо!",
+         author: {
+            name: "Екатерина Незнанова",
+            date: "29 сент 2022",
+         },
+         rating: 5,
+      },
+   ];
+   prevBtn.onclick = () => {
+      if (currentIndex == 0) {
+         currentIndex = reviewsArray.length - 1;
+      } else {
+         currentIndex--;
+      }
+      render();
+   };
+   nextBtn.onclick = () => {
+      if (currentIndex == reviewsArray.length - 1) {
+         currentIndex = 0;
+      } else {
+         currentIndex++;
+      }
+      render();
+   };
+   render();
+
+   async function render() {
+      await anim();
+      await delay(500); // Задержка в 500 миллисекунд
+      let object = reviewsArray[currentIndex];
+      const [authorNameElem, authorDateElem] = document.querySelectorAll(
+         ".reviews-section__info p"
+      );
+      const [currentPagination, allPagination] = document.querySelectorAll(
+         ".reviews-section__pagination span"
+      );
+      const rating = document.querySelector(".reviews-section__rating");
+      textElem.innerHTML = object.text
+         .split(" ")
+         .map((word) => `<p><span>${word}</span></p>`)
+         .join(" ");
+      authorNameElem.innerHTML = `<span>${object.author.name}</span>`;
+      authorDateElem.innerHTML = `<span>${object.author.date}</span>`;
+      currentPagination.innerHTML = currentIndex + 1;
+      allPagination.innerHTML = reviewsArray.length;
+
+      let ratingArr = [];
+      for (let i = 0; i < object.rating; i++) {
+         ratingArr.push(`<li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17"
+                                      fill="none">
+                                      <path
+                                         d="M8.52447 0.463525C8.67415 0.00287008 9.32585 0.00287008 9.47553 0.463525L11.1329 5.56434C11.1998 5.77035 11.3918 5.90983 11.6084 5.90983H16.9717C17.4561 5.90983 17.6575 6.52964 17.2656 6.81434L12.9266 9.96681C12.7514 10.0941 12.678 10.3198 12.745 10.5258L14.4023 15.6266C14.552 16.0873 14.0248 16.4704 13.6329 16.1857L9.29389 13.0332C9.11865 12.9059 8.88135 12.9059 8.70611 13.0332L4.3671 16.1857C3.97524 16.4704 3.448 16.0873 3.59768 15.6266L5.25503 10.5258C5.32197 10.3198 5.24864 10.0941 5.07339 9.96681L0.734384 6.81434C0.342527 6.52964 0.543915 5.90983 1.02828 5.90983H6.39159C6.6082 5.90983 6.80018 5.77035 6.86712 5.56434L8.52447 0.463525Z"
+                                         fill="#182126" />
+                                   </svg>
+           </li>`);
+      }
+      rating.innerHTML = ratingArr.join(" ");
+
+      // Устанавливаем высоту текста
+      const textHeight = textElem.scrollHeight; // Получаем высоту текста
+      textElem.style.minHeight = `${textElem.clientHeight}px`; // Устанавливаем высоту
+
+      await secondAnim();
+   }
+   async function anim() {
+      let spanItems = [
+         ...textElem.querySelectorAll("span"),
+         ...document.querySelectorAll(".reviews-section__info span"),
+         ...document.querySelectorAll(".reviews-section__rating li"),
+      ];
+      // Создаем массив промисов для всех анимаций
+      let animations = Array.from(spanItems).map((item) => {
+         return new Promise((resolve) => {
+            gsap.to(item, {
+               y: "-100%", // Прокручиваем вверх на половину высоты
+               duration: 0.3, // Длительность анимации
+               ease: "linear", // Линейное движение
+               onComplete: resolve, // Вызываем resolve, когда анимация завершена
+            });
+         });
+      });
+
+      // Дожидаемся завершения всех анимаций
+      await Promise.all(animations);
+      return true;
+   }
+   async function secondAnim() {
+      let spanItems = [
+         ...textElem.querySelectorAll("span"),
+         ...document.querySelectorAll(".reviews-section__info span"),
+         ...document.querySelectorAll(".reviews-section__rating li"),
+      ];
+      // Создаем массив промисов для всех анимаций
+      let animations = Array.from(spanItems).map((item) => {
+         return new Promise((resolve) => {
+            gsap.from(item, {
+               y: "100%", // Прокручиваем вверх на половину высоты
+               duration: 0.3, // Длительность анимации
+               ease: "linear", // Линейное движение
+               onComplete: resolve, // Вызываем resolve, когда анимация завершена
+            });
+         });
+      });
+
+      // Дожидаемся завершения всех анимаций
+      await Promise.all(animations);
+      return true;
+   }
+   function delay(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+   }
+}
+function blogCards() {
+   const cards = document.querySelectorAll(".blog-card");
+   if (!cards.length) return;
+   const arrows = document.querySelectorAll(
+      ".blog-section .home-catalog__arrow"
+   );
+   cards.forEach((card, cardIndex) => {
+      let currentArrow = arrows[cardIndex];
+      card.onmouseenter = (e) => {
+         // console.log("enter", e);
+         currentArrow.classList.add("active");
+      };
+      card.onmousemove = (e) => {
+         // console.log("move", e);
+         currentArrow.style.left = `${e.offsetX}px`;
+         currentArrow.style.top = `${e.offsetY}px`;
+      };
+      card.onmouseleave = (e) => {
+         // console.log("leave", e);
+         currentArrow.classList.remove("active");
+      };
+   });
+}
+function footer() {
+   const form = document.querySelector(".footer__form");
+   if (!form) return;
+   const button = form.querySelector("button");
+   button.onclick = () => {
+      form.classList.add("step-2");
+   };
+   if (window.innerWidth <= 568) {
+      accordion(".footer-spoiler__header", ".footer__block .collapse");
+   }
+}
 class Select {
    constructor(selector, options) {
       this.$el = document.querySelector(selector);
@@ -281,6 +581,136 @@ class Select {
       </div>
       `;
    }
+}
+function tabs(linkSelector, contentSelector) {
+   const inputs = document.querySelectorAll(linkSelector);
+   const contents = document.querySelectorAll(contentSelector);
+   let value;
+   if (inputs.length) {
+      inputs.forEach((item) => {
+         item.addEventListener("change", () => {
+            if (item.checked) {
+               value = item.value;
+            }
+            contents.forEach((item) => {
+               item.classList.remove("active");
+               if (item.getAttribute("data-tab") == value) {
+                  item.classList.add("active");
+               }
+            });
+         });
+      });
+   }
+}
+function accordion(linkSelector, contentSelector) {
+   // получаем линки
+   const openLinks = document.querySelectorAll(`${linkSelector}`);
+   // контенты
+   const contents = document.querySelectorAll(`${contentSelector}`);
+   if (openLinks.length > 0) {
+      for (let i = 0; i < openLinks.length; i++) {
+         let openLink = openLinks[i];
+         openLink.addEventListener("click", () => {
+            // все прячем
+            for (let j = 0; j < contents.length; j++) {
+               // если хоть один открывается - return
+               if (contents[j].classList.contains("collapsing")) {
+                  return;
+               } // Иначе
+               // все прячем
+               slideHide(contents[j]);
+            }
+            for (let j = 0; j < openLinks.length; j++) {
+               openLinks[j].classList.remove("active");
+            }
+            // записываем в переменную нужный таб
+            let content = contents[i];
+            // работаем с классами линка
+            if (content.classList.contains("collapsing")) {
+               return;
+            } else if (content.classList.contains("collapse_show")) {
+               openLink.classList.remove("active");
+            } else {
+               openLink.classList.add("active");
+            }
+            // показываем нужный
+            slideShow(content);
+         });
+      }
+   }
+}
+
+function slideShow(el, duration = 500) {
+   // завершаем работу метода, если элемент содержит класс collapsing или collapse_show
+   if (
+      el.classList.contains("collapsing") ||
+      el.classList.contains("collapse_show")
+   ) {
+      return;
+   }
+   // удаляем класс collapse
+   el.classList.remove("collapse");
+   // сохраняем текущую высоту элемента в константу height (это значение понадобится ниже)
+   const height = el.offsetHeight;
+   // устанавливаем высоте значение 0
+   el.style["height"] = 0;
+   // не отображаем содержимое элемента, выходящее за его пределы
+   el.style["overflow"] = "hidden";
+   // создание анимации скольжения с помощью CSS свойства transition
+   el.style["transition"] = `height ${duration}ms ease`;
+   // добавляем класс collapsing
+   el.classList.add("collapsing");
+   // получим значение высоты (нам этого необходимо для того, чтобы просто заставить браузер выполнить перерасчет макета, т.к. он не сможет нам вернуть правильное значение высоты, если не сделает это)
+   el.offsetHeight;
+   // установим в качестве значения высоты значение, которое мы сохранили в константу height
+   el.style["height"] = `${height}px`;
+   // по истечении времени анимации this._duration
+   window.setTimeout(() => {
+      // удалим класс collapsing
+      el.classList.remove("collapsing");
+      // добавим классы collapse и collapse_show
+      el.classList.add("collapse");
+      el.classList.add("collapse_show");
+      // удалим свойства height, transition и overflow
+      el.style["height"] = "";
+      el.style["transition"] = "";
+      el.style["overflow"] = "";
+   }, duration);
+}
+function slideHide(el, duration = 500) {
+   // завершаем работу метода, если элемент содержит класс collapsing или collapse_show
+   if (
+      el.classList.contains("collapsing") ||
+      !el.classList.contains("collapse_show")
+   ) {
+      return;
+   }
+   // установим свойству height текущее значение высоты элемента
+   el.style["height"] = `${el.offsetHeight}px`;
+   // получим значение высоты
+   el.offsetHeight;
+   // установим CSS свойству height значение 0
+   el.style["height"] = 0;
+   // обрежем содержимое, выходящее за границы элемента
+   el.style["overflow"] = "hidden";
+   // добавим CSS свойство transition для осуществления перехода длительностью this._duration
+   el.style["transition"] = `height ${duration}ms ease`;
+   // удалим классы collapse и collapse_show
+   el.classList.remove("collapse");
+   el.classList.remove("collapse_show");
+   // добавим класс collapsing
+   el.classList.add("collapsing");
+   // после завершения времени анимации
+   window.setTimeout(() => {
+      // удалим класс collapsing
+      el.classList.remove("collapsing");
+      // добавим класс collapsing
+      el.classList.add("collapse");
+      // удалим свойства height, transition и overflow
+      el.style["height"] = "";
+      el.style["transition"] = "";
+      el.style["overflow"] = "";
+   }, duration);
 }
 // const sort = new Select("#select", {
 //    // placeholder: "Сортировка",

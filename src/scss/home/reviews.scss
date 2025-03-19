@@ -1,0 +1,210 @@
+.reviews-section {
+   transition: $transition;
+
+   margin-top: var(--sectionMargin);
+   // .reviews-section__wrapper
+
+   &__wrapper {
+      border-radius: 8px;
+      border: 1px solid var(--black-5, rgba(0, 0, 0, 0.05));
+      background: var(--white-100, #fff);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      transition: $transition;
+      @media (max-width: $mobile) {
+         padding: 12px;
+      }
+   }
+
+   // .reviews-section__tag
+
+   &__tag {
+      height: 24px;
+      padding: 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: fit-content;
+      color: $white;
+      background-color: $black;
+      white-space: nowrap;
+      border-radius: 4px;
+   }
+
+   // .reviews-section__content
+
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      gap: 64px;
+      transition: $transition;
+      @media (max-width: $tablet) {
+         gap: 48px;
+      }
+      @media (max-width: $mobile) {
+         gap: 24px;
+         flex-direction: column;
+      }
+   }
+
+   // .reviews-section__side
+
+   &__side {
+      flex: 0 0 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      @media (max-width: $mobile) {
+         flex: unset;
+      }
+   }
+
+   // .reviews-section__rating
+
+   &__rating {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      overflow: hidden;
+   }
+
+   // .reviews-section__link
+
+   &__link {
+      @include text-16;
+      border-bottom: 1px solid $black-50;
+      color: $black-50;
+      width: fit-content;
+   }
+
+   // .reviews-section__gallery
+
+   &__gallery {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      img {
+         border-radius: 4px;
+         width: 56px;
+         height: 56px;
+      }
+      .count {
+         margin-left: 12px;
+         color: var(--black-100, #182126);
+         font-family: $fontIntr;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 150%; /* 21px */
+         letter-spacing: -0.154px;
+         text-transform: uppercase;
+      }
+   }
+
+   // .reviews-section__main
+
+   &__main {
+      flex: 0 1 1027px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+      transition: $transition;
+      @media (max-width: $mobile) {
+         gap: 20px;
+         flex: unset;
+      }
+   }
+
+   // .reviews-section__text
+
+   &__text {
+      transition: $transition;
+
+      @include h4;
+      p {
+         overflow: hidden;
+         display: inline-block;
+      }
+      span {
+         display: inline-block;
+      }
+      @media (max-width: $tablet) {
+         @include h5;
+      }
+   }
+
+   // .reviews-section__footer
+
+   &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         gap: 48px;
+         align-items: flex-start;
+      }
+   }
+
+   // .reviews-section__author
+
+   &__author {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      .circle {
+         --size: 56px;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+
+   // .reviews-section__info
+
+   &__info {
+      display: flex;
+      flex-direction: column;
+      p {
+         overflow: hidden;
+      }
+      span {
+         display: inline-block;
+      }
+      p:nth-child(1) {
+         @include text-16;
+         color: $black;
+      }
+      p:nth-child(2) {
+         @include text-13;
+         color: $black-50;
+      }
+   }
+
+   // .reviews-section__navigation
+   &__nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+   }
+   &__navigation {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .icon-btn {
+         width: 52px;
+         flex: 0 0 52px;
+      }
+   }
+
+   // .reviews-section__pagination
+
+   &__pagination {
+      color: $black-50;
+   }
+}

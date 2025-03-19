@@ -2,10 +2,12 @@
    display: none;
 }
 .wrapper {
+   background-color: #fcfcfc;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
    font-weight: 500;
+   color: $black;
 }
 .container {
    margin: 0 auto;
@@ -267,17 +269,19 @@ label {
    background-color: $orange;
    overflow: hidden;
    position: relative;
+   transition: $transition cubic-bezier(0.23, 1, 0.32, 1);
+
    &::after {
       border-radius: 4px;
       content: "";
       display: block;
-      width: 100%;
-      height: 0;
+      width: 110%;
+      height: 0%;
       transition: $transition cubic-bezier(0.23, 1, 0.32, 1);
       background-color: $black;
       position: absolute;
-      bottom: 0;
-      left: 0;
+      bottom: -5%;
+      left: -5%;
       right: 0;
    }
    svg,
@@ -285,13 +289,22 @@ label {
       position: relative;
       z-index: 2;
    }
-   .white {
+   &.white {
       background-color: $white;
+      border: 1px solid $black-15;
+      @media (hover: hover) {
+         &:hover {
+            border-color: $black;
+            svg path {
+               fill: $white;
+            }
+         }
+      }
    }
    @media (hover: hover) {
       &:hover {
          &::after {
-            height: 100%;
+            height: 110%;
          }
       }
    }

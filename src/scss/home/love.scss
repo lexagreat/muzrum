@@ -1,0 +1,192 @@
+.home-love {
+   padding-top: var(--sectionMargin);
+   overflow: hidden;
+   // .home-love__wrapper
+
+   &__wrapper {
+      display: flex;
+      gap: calc(130 / 1440 * 100vw);
+      justify-content: space-between;
+      @media (max-width: $tablet) {
+         flex-direction: column;
+
+         gap: 40px;
+         justify-content: unset;
+      }
+   }
+
+   // .home-love__image
+
+   &__image {
+      flex: 0 0 calc(714 / 1440 * 100%);
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      @media (max-width: $tablet) {
+         flex: unset;
+         width: 100vw;
+         aspect-ratio: calc(768 / 780);
+         max-height: 780px;
+      }
+   }
+
+   // .home-love__content
+
+   &__content {
+      flex: 0 0 calc(556 / 1440 * 100%);
+      max-width: calc(556 / 1440 * 100vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+      @media (max-width: $tablet) {
+         flex: unset;
+         max-width: unset;
+         gap: 200px;
+      }
+      @media (max-width: $mobile) {
+         gap: 120px;
+      }
+   }
+
+   // .home-love__main
+
+   &__main {
+      padding-right: var(--container);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .btn {
+         width: 140px;
+      }
+      @media (max-width: $tablet) {
+         padding-left: var(--container);
+         max-width: 556px;
+         .h2 {
+            @include h2;
+         }
+      }
+      @media (max-width: $mobile) {
+         .h2 {
+            @include h2-mobile;
+         }
+      }
+   }
+
+   // .home-love__running
+
+   &__running {
+      margin-right: calc(-1 * var(--container));
+      @media (max-width: $tablet) {
+         margin-left: calc(-1 * var(--container));
+      }
+      .runeline {
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         border-radius: 8px;
+         // margin: 0 auto;
+      }
+
+      .marquee-0 {
+         --space: 0rem;
+         display: grid;
+         align-content: center;
+      }
+
+      .marquee {
+         --duration: 20s;
+         --gap: var(--space);
+         display: flex;
+         user-select: none;
+         position: relative;
+         max-width: calc(calc(556 / 1440 * 100%) + var(--container));
+      }
+
+      .marquee:hover {
+         z-index: 99;
+      }
+
+      .marquee__group {
+         flex-shrink: 0;
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         min-width: 100%;
+         animation: runningLineAnim var(--duration) linear infinite;
+      }
+
+      .marquee:hover .marquee__group {
+         animation-play-state: paused;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+         .marquee__group {
+            animation-play-state: paused;
+         }
+      }
+
+      .marquee__group a:hover {
+         background: #b8ff65;
+         color: #282828;
+      }
+   }
+   &__item {
+      position: relative;
+      flex: 0 0 223px;
+      width: 223px;
+      height: 280px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-right: 12px;
+      cursor: pointer;
+      @media (hover: hover) {
+         &:hover {
+            .home-love__info {
+               opacity: 1;
+            }
+         }
+      }
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      @media (max-width: $mobile) {
+         flex: 0 0 180px;
+         width: 180px;
+         margin-right: 8px;
+         height: 240px;
+      }
+   }
+   // .home-love__info
+
+   &__info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      background-color: $black;
+      color: $white;
+      color: #fff;
+      font-family: $fontIntr;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 21px */
+      letter-spacing: -0.154px;
+      text-transform: uppercase;
+      padding-top: 11px;
+      padding-left: 16px;
+      padding-right: 10px;
+      transition: $transition;
+      @media (max-width: $tablet) {
+         display: none;
+      }
+   }
+}
