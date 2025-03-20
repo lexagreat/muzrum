@@ -211,9 +211,7 @@
          /* blur */
          backdrop-filter: blur(3px);
          &::before {
-            background: var(--white-70, rgba(255, 255, 255, 0.1));
-            opacity: 0.1;
-            backdrop-filter: blur(3px);
+            background-color: #c8c9c9;
          }
          @media (hover: hover) {
             &:hover {

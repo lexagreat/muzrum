@@ -10,25 +10,32 @@ if (document.querySelectorAll("[data-phone]").length) {
 }
 const body = document.body;
 gsap.registerPlugin(ScrollTrigger);
+// Инициализация Lenis
 // const lenis = new Lenis({
-//    duration: 0.4,
-//    smooth: true,
-//    direction: "vertical",
-//    // lerp: 0.05,
+//    duration: 1.2, // Длительность анимации
+//    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Функция плавности
+//    smooth: true, // Включение плавного скроллинга
+//    direction: "vertical", // Направление скроллинга
+//    gestureDirection: "vertical", // Направление жестов
+//    smoothTouch: false, // Плавность на мобильных устройствах
+//    touchMultiplier: 2, // Ускорение скроллинга на мобильных
+//    infinite: false, // Отключение бесконечного скроллинга
 // });
-// window.lenis = lenis;
 
+// // Функция для обновления анимации
 // function raf(time) {
 //    lenis.raf(time);
 //    requestAnimationFrame(raf);
 // }
 
 // requestAnimationFrame(raf);
+
 document.addEventListener("DOMContentLoaded", () => {
    headerWork();
    homePage();
    productCards();
    footer();
+   catalogPage();
 });
 function headerWork() {
    const header = document.querySelector(".header");
@@ -37,6 +44,34 @@ function headerWork() {
    if (!main) {
       header.classList.add("transparent");
    }
+   let oldScrollTopPosition = 0;
+   let hero = document.querySelector(".hero");
+
+   const onScroll = () => {
+      if (window.innerWidth > 992) {
+         const scrollTopPosition = document.documentElement.scrollTop;
+         if (scrollTopPosition <= 0) {
+            return;
+         }
+         let scrollDown = oldScrollTopPosition < scrollTopPosition;
+         if (scrollDown) {
+            header.classList.add("scroll-down");
+         } else {
+            header.classList.remove("scroll-down");
+         }
+
+         oldScrollTopPosition = scrollTopPosition;
+      }
+      if (hero) {
+         let heroHeight = hero.clientHeight;
+         if (window.scrollY > heroHeight) {
+            header.classList.remove("transparent");
+         } else {
+            header.classList.add("transparent");
+         }
+      }
+   };
+   document.addEventListener("scroll", onScroll);
 }
 function homePage() {
    function hero() {
@@ -217,6 +252,212 @@ function homePage() {
    reviews();
    blogCards();
    tabs('[name="social"]', ".social-tab");
+}
+function catalogPage() {
+   const filters = document.querySelector(".catalog-filters");
+   if (!filters) return;
+   const brandSelect = new Select("#brandSelect", {
+      placeholder: "Бренд",
+      selectedId: [],
+      multi: true,
+      data: [
+         {
+            value: "Casio",
+            id: "Casio",
+         },
+         {
+            value: "Becker",
+            id: "Becker",
+         },
+         {
+            value: "Korg",
+            id: "Korg",
+         },
+         {
+            value: "Kawai",
+            id: "Kawai",
+         },
+         {
+            value: "Rockdale",
+            id: "Rockdale",
+         },
+         {
+            value: "Kurzweil",
+            id: "Kurzweil",
+         },
+         {
+            value: "Roland",
+            id: "Roland",
+         },
+         {
+            value: "Nux",
+            id: "Nux",
+         },
+         {
+            value: "Ringway",
+            id: "Ringway",
+         },
+         {
+            value: "Orla",
+            id: "Orla",
+         },
+         {
+            value: "Yamaha",
+            id: "Yamaha",
+         },
+         {
+            value: "Mikado",
+            id: "Mikado",
+         },
+         {
+            value: "Artesia",
+            id: "Artesia",
+         },
+         {
+            value: "Antares",
+            id: "Antares",
+         },
+         {
+            value: "Medeli",
+            id: "Medeli",
+         },
+         {
+            value: "Tesler",
+            id: "Tesler",
+         },
+      ],
+      onSelect(item, select) {
+         if (select.querySelectorAll(".selected").length) {
+            select.classList.add("filled");
+         }
+      },
+   });
+   const colorSelect = () => {
+      const colorS = document.querySelector("#colorSelect");
+      colorS.onclick = (e) => {
+         let { type } = e.target.dataset;
+         if (type === "clear") {
+            colorS.classList.remove("filled");
+
+            colorS
+               .querySelectorAll("input")
+               .forEach((item) => (item.checked = false));
+         } else if (["input", "back", "header"].includes(type)) {
+            if (colorS.classList.contains("open")) {
+               colorS.classList.remove("open");
+            } else {
+               colorS.classList.add("open");
+            }
+         } else if (e.target.closest("label")) {
+            if (colorS.querySelectorAll("input:checked").length) {
+               colorS.classList.add("filled");
+               colorS.querySelector(".select__title span.count").innerHTML =
+                  colorS.querySelectorAll("input:checked").length;
+            } else {
+               colorS.classList.remove("filled");
+            }
+         }
+      };
+   };
+   const sortSelect = new Select("#sortSelect", {
+      placeholder: "Сортировка",
+      selectedId: "",
+      multi: false,
+      data: [
+         {
+            id: "vibor-muzrum",
+            value: "выбор музрум",
+         },
+         {
+            id: "sort1",
+            value: "популярные",
+         },
+         {
+            id: "sort2",
+            value: "по новизне",
+         },
+         {
+            id: "sort3",
+            value: "по возрастанию цены",
+         },
+         {
+            id: "sort4",
+            value: "по убыванию цены",
+         },
+      ],
+      onSelect(item, select) {
+         if (select.querySelectorAll(".selected").length) {
+            select.classList.add("filled");
+         }
+      },
+   });
+   const saleBannerAnim = () => {
+      const images = document.querySelectorAll(".sale-banner img");
+      let index = 0;
+      setInterval(() => {
+         images.forEach((item) => item.classList.remove("active"));
+         images[index].classList.add("active");
+         if (index < images.length - 1) {
+            index++;
+         } else {
+            index = 0;
+         }
+      }, 500);
+   };
+   const changeView = () => {
+      const inputs = document.querySelectorAll('[name="catalog-view"]');
+      const wrapper = document.querySelector(".catalog-products");
+      inputs.forEach((item) => {
+         item.addEventListener("change", (e) => {
+            if (e.target.value == 1) {
+               wrapper.classList.add("row");
+            } else {
+               wrapper.classList.remove("row");
+            }
+         });
+      });
+   };
+   const priceSelect = () => {
+      let min = 0; // переменные для макс и мин цены
+      let max = 400000;
+      makeRange("#priceSelect", max, 1000);
+      const priceS = document.querySelector("#priceSelect");
+      let inputs = priceS.querySelectorAll("input");
+
+      priceS.onclick = (e) => {
+         let { type } = e.target.dataset;
+         if (type === "clear") {
+            priceS.classList.remove("filled");
+            // тут сброс при нажатии на крестик
+            inputs[0].value = min;
+            inputs[1].value = max;
+            priceS.querySelector(".price-slider").style.left = 0;
+            priceS.querySelector(".price-slider").style.right = 0;
+         } else if (["input", "back", "header"].includes(type)) {
+            if (priceS.classList.contains("open")) {
+               priceS.classList.remove("open");
+            } else {
+               priceS.classList.add("open");
+            }
+         }
+      };
+      inputs.forEach((input, index) => {
+         input.addEventListener("input", (e) => {
+            if (inputs[0].value == min && inputs[1].value == max) {
+               console.log("");
+               priceS.classList.remove("filled");
+            } else {
+               priceS.classList.add("filled");
+            }
+         });
+      });
+   };
+   colorSelect();
+   changeView();
+   priceSelect();
+   makeRange("#priceRange1", 400000, 1000);
+   saleBannerAnim();
+   accordion(".filters-modal__subheader", ".filters-modal__collapse");
 }
 function productSlider(selector) {
    let selectedItem = document.querySelector(`${selector} .swiper`);
@@ -438,6 +679,105 @@ function footer() {
       accordion(".footer-spoiler__header", ".footer__block .collapse");
    }
 }
+function makeRange(blockSelector, max = 10000, gap = 500) {
+   //  Script.js
+   const rangevalue = document.querySelector(
+      blockSelector + " " + ".slider-container .price-slider"
+   );
+   if (
+      !document.querySelector(
+         blockSelector + " " + ".slider-container .price-slider"
+      )
+   )
+      return;
+   const rangeInputvalue = document.querySelectorAll(
+      blockSelector + " " + ".range-input input"
+   );
+
+   // Set the price gap
+   let priceGap = gap;
+   console.log(rangevalue);
+   console.log(rangeInputvalue);
+   // Adding event listners to price input elements
+   const priceInputvalue = document.querySelectorAll(
+      blockSelector + " " + ".price-input input"
+   );
+   for (let i = 0; i < priceInputvalue.length; i++) {
+      priceInputvalue[i].addEventListener("input", (e) => {
+         // Parse min and max values of the range input
+         let minp = parseInt(priceInputvalue[0].value);
+         let maxp = parseInt(priceInputvalue[1].value);
+         let diff = maxp - minp;
+
+         if (minp < 0) {
+            alert("minimum price cannot be less than 0");
+            priceInputvalue[0].value = 0;
+            minp = 0;
+         }
+
+         // Validate the input values
+         if (maxp > max) {
+            alert("maximum price cannot be greater than " + max);
+            priceInputvalue[1].value = max;
+            maxp = max;
+         }
+
+         if (minp > maxp - priceGap) {
+            priceInputvalue[0].value = maxp - priceGap;
+            minp = maxp - priceGap;
+
+            if (minp < 0) {
+               priceInputvalue[0].value = 0;
+               minp = 0;
+            }
+         }
+
+         // Check if the price gap is met
+         // and max price is within the range
+         if (diff >= priceGap && maxp <= rangeInputvalue[1].max) {
+            if (e.target.className === "min-input") {
+               rangeInputvalue[0].value = minp;
+               let value1 = rangeInputvalue[0].max;
+               rangevalue.style.left = `${(minp / value1) * 100}%`;
+            } else {
+               rangeInputvalue[1].value = maxp;
+               let value2 = rangeInputvalue[1].max;
+               rangevalue.style.right = `${100 - (maxp / value2) * 100}%`;
+            }
+         }
+      });
+
+      // Add event listeners to range input elements
+      for (let i = 0; i < rangeInputvalue.length; i++) {
+         rangeInputvalue[i].addEventListener("input", (e) => {
+            let minVal = parseInt(rangeInputvalue[0].value);
+            let maxVal = parseInt(rangeInputvalue[1].value);
+
+            let diff = maxVal - minVal;
+
+            // Check if the price gap is exceeded
+            if (diff < priceGap) {
+               // Check if the input is the min range input
+               if (e.target.className === "min-range") {
+                  rangeInputvalue[0].value = maxVal - priceGap;
+               } else {
+                  rangeInputvalue[1].value = minVal + priceGap;
+               }
+            } else {
+               // Update price inputs and range progress
+               priceInputvalue[0].value = minVal;
+               priceInputvalue[1].value = maxVal;
+               rangevalue.style.left = `${
+                  (minVal / rangeInputvalue[0].max) * 100
+               }%`;
+               rangevalue.style.right = `${
+                  100 - (maxVal / rangeInputvalue[1].max) * 100
+               }%`;
+            }
+         });
+      }
+   }
+}
 class Select {
    constructor(selector, options) {
       this.$el = document.querySelector(selector);
@@ -464,7 +804,22 @@ class Select {
    }
    clickHandler(event) {
       const { type } = event.target.dataset;
-      if (type === "input") {
+      if (type === "clear") {
+         this.$el.classList.remove("filled");
+         this.$value.innerHTML = `
+            ${this.options.placeholder}
+            
+            `;
+         this.$el
+            .querySelectorAll(".select__item")
+            .forEach((item) => item.classList.remove("selected"));
+         this.$el
+            .querySelectorAll("input")
+            .forEach((item) => (item.checked = false));
+         this.selectedId = [];
+
+         return;
+      } else if (type === "input") {
          this.toggle();
       } else if (type === "item") {
          const { id } = event.target.dataset;
@@ -498,18 +853,30 @@ class Select {
             this.selectedId.push(id);
          }
          if (this.current.length) {
-            this.$value.innerHTML = this.current
-               .map((item) => item.value)
-               .join(", ");
+            this.$value.innerHTML = `
+            ${this.options.placeholder}
+            <span>${this.current.length}</span>
+            `;
          } else {
+            console.log("пусто");
             this.$value.innerHTML = this.options.placeholder;
-            // this.$el
-            //    .querySelector(`[data-type="input"]`)
-            //    .classList.add("placeholder");
+            this.$el.classList.remove("filled");
          }
       } else {
          this.selectedId = id;
          this.$value.innerHTML = this.current.value;
+         console.log(this.selectedId);
+         if (this.selectedId == "vibor-muzrum") {
+            this.$value.innerHTML = `${this.current.value} <button class="hint">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+  <path d="M6.99984 12.8333C3.77817 12.8333 1.1665 10.2216 1.1665 6.99999C1.1665 3.77833 3.77817 1.16666 6.99984 1.16666C10.2215 1.16666 12.8332 3.77833 12.8332 6.99999C12.8332 10.2216 10.2215 12.8333 6.99984 12.8333ZM6.4165 8.74999V9.91666H7.58317V8.74999H6.4165ZM7.58317 7.79046C8.4265 7.53946 9.0415 6.7582 9.0415 5.83332C9.0415 4.70574 8.12742 3.79166 6.99984 3.79166C6.00934 3.79166 5.18355 4.49702 4.99744 5.43284L6.14164 5.66169C6.22144 5.26062 6.57535 4.95832 6.99984 4.95832C7.48307 4.95832 7.87484 5.35007 7.87484 5.83332C7.87484 6.31656 7.48307 6.70832 6.99984 6.70832C6.67766 6.70832 6.4165 6.96948 6.4165 7.29166V8.16666H7.58317V7.79046Z" fill="black" fill-opacity="0.35"/>
+</svg>
+<p>
+Сначала покажем лучшее по версии Музрум
+</p>
+
+</button>`;
+         }
       }
 
       this.$el.querySelectorAll(`[data-type="item"]`).forEach((item) => {
@@ -562,7 +929,10 @@ class Select {
          if (this.options.multi) {
          } else {
          }
-         return `<li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>`;
+         return `<li class="select__item ${cls}" data-type="item" data-id="${item.id}">
+         
+         ${item.value}
+         </li>`;
       });
       return `
       <div class="select__header" data-type="header">
@@ -571,7 +941,13 @@ class Select {
          <span>${placeholder}</span>
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9334 6.08291C14.1498 6.29933 14.1498 6.6502 13.9334 6.86662L7.99991 12.8001L2.06643 6.86662C1.85002 6.6502 1.85002 6.29933 2.06643 6.08291C2.28285 5.8665 2.73748 5.86637 2.9539 6.08278L8.00027 11.0924L12.9972 6.08272C13.2136 5.86631 13.717 5.8665 13.9334 6.08291Z" fill="black"/>
-         </svg>      
+         </svg>
+         <button data-type="clear">
+           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M3 3L13 13M3 13L13 3" stroke="white"/>
+</svg>    
+         </button>      
+         
     </div>
       </div>
       <div class="select__content">
@@ -712,79 +1088,104 @@ function slideHide(el, duration = 500) {
       el.style["overflow"] = "";
    }, duration);
 }
-// const sort = new Select("#select", {
-//    // placeholder: "Сортировка",
-//    selectedId: ["Casio"],
-//    multi: true,
-//    placeholder: "text",
-//    data: [
-//       {
-//          value: "Casio",
-//          id: "Casio",
-//       },
-//       {
-//          value: "Becker",
-//          id: "Becker",
-//       },
-//       {
-//          value: "Korg",
-//          id: "Korg",
-//       },
-//       {
-//          value: "Kawai",
-//          id: "Kawai",
-//       },
-//       {
-//          value: "Rockdale",
-//          id: "Rockdale",
-//       },
-//       {
-//          value: "Kurzweil",
-//          id: "Kurzweil",
-//       },
-//       {
-//          value: "Roland",
-//          id: "Roland",
-//       },
-//       {
-//          value: "Nux",
-//          id: "Nux",
-//       },
-//       {
-//          value: "Ringway",
-//          id: "Ringway",
-//       },
-//       {
-//          value: "Orla",
-//          id: "Orla",
-//       },
-//       {
-//          value: "Yamaha",
-//          id: "Yamaha",
-//       },
-//       {
-//          value: "Mikado",
-//          id: "Mikado",
-//       },
-//       {
-//          value: "Artesia",
-//          id: "Artesia",
-//       },
-//       {
-//          value: "Antares",
-//          id: "Antares",
-//       },
-//       {
-//          value: "Medeli",
-//          id: "Medeli",
-//       },
-//       {
-//          value: "Tesler",
-//          id: "Tesler",
-//       },
-//    ],
-//    onSelect(item, select) {
-//       select.classList.add("filled");
-//       console.log(item);
-//    },
-// });
+// Popup
+const popupLinks = document.querySelectorAll(".modal__link");
+const lockPadding = document.querySelectorAll(".lock-padding");
+const popupCloseIcon = document.querySelectorAll(".modal__close");
+
+let unlock = true;
+
+const timeout = 500;
+
+if (popupLinks.length > 0) {
+   for (let index = 0; index < popupLinks.length; index++) {
+      const popupLink = popupLinks[index];
+      popupLink.addEventListener("click", function (e) {
+         const popupName = popupLink.getAttribute("href").replace("#", "");
+         const curentPopup = document.getElementById(popupName);
+         popupOpen(curentPopup);
+         e.preventDefault();
+      });
+   }
+}
+
+if (popupCloseIcon.length > 0) {
+   for (let index = 0; index < popupCloseIcon.length; index++) {
+      const el = popupCloseIcon[index];
+      el.addEventListener("click", function (e) {
+         popupClose(el.closest(".modal"));
+         e.preventDefault();
+      });
+   }
+}
+
+function popupOpen(curentPopup) {
+   if (curentPopup && unlock) {
+      const popupActive = document.querySelector(".modal.open");
+      if (popupActive) {
+         popupClose(popupActive, false);
+      } else {
+         bodyLock();
+      }
+      curentPopup.classList.add("open");
+      curentPopup.addEventListener("click", function (e) {
+         if (!e.target.closest(".modal__content")) {
+            popupClose(e.target.closest(".modal"));
+         }
+      });
+   }
+}
+function popupClose(popupActive, doUnlock = true) {
+   if (unlock) {
+      popupActive.classList.remove("open");
+      if (doUnlock) {
+         bodyUnLock();
+      }
+   }
+}
+
+function bodyLock() {
+   const lockPaddingValue =
+      window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+
+   if (lockPadding.length > 0) {
+      for (let index = 0; index < lockPadding.length; index++) {
+         const el = lockPadding[index];
+         el.style.paddingRight = lockPaddingValue;
+      }
+   }
+   body.style.paddingRight = lockPaddingValue;
+   body.classList.add("lock");
+   // lenis.stop();
+
+   unlock = false;
+   setTimeout(function () {
+      unlock = true;
+   }, timeout);
+}
+
+function bodyUnLock() {
+   setTimeout(function () {
+      if (lockPadding.length > 0) {
+         for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = "0px";
+         }
+      }
+      body.style.paddingRight = "0px";
+      body.classList.remove("lock");
+      // lenis.start();
+   }, timeout);
+
+   unlock = false;
+   setTimeout(function () {
+      unlock = true;
+   }, timeout);
+}
+
+document.addEventListener("keydown", function (e) {
+   if (e.which === 27) {
+      const popupActive = document.querySelector(".modal.open");
+      popupClose(popupActive);
+   }
+});

@@ -23,6 +23,20 @@
       .header__icons svg path {
          fill: $white;
       }
+      .header__burger {
+         span,
+         &::before,
+         &::after {
+            background-color: #fff;
+         }
+      }
+   }
+   &.scroll-down {
+      .header__logo {
+         .logo__book {
+            opacity: 0;
+         }
+      }
    }
    &__logo svg path,
    &__link,
@@ -76,6 +90,7 @@
          transition: $transition;
          @media (max-width: $mobile) {
             width: 12px;
+            height: 1px;
          }
       }
       &::before {
@@ -109,6 +124,9 @@
    &__logo {
       svg {
          width: 100%;
+      }
+      .logo__book {
+         transition: $transition;
       }
       @media (max-width: $mobile) {
          width: 88px;

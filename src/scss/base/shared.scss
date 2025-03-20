@@ -2,7 +2,7 @@
    display: none;
 }
 .wrapper {
-   background-color: #fcfcfc;
+   background-color: #f2f2f2;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
@@ -28,7 +28,15 @@
    align-items: center;
    justify-content: center;
 }
-
+.rect {
+   --size: 32px;
+   flex: 0 0 var(--size);
+   width: var(--size);
+   height: var(--size);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 label {
    cursor: pointer;
 }
@@ -78,6 +86,7 @@ label {
    @include caption;
 }
 .btn {
+   white-space: nowrap;
    height: 44px;
    display: flex;
    align-items: center;
@@ -311,7 +320,6 @@ label {
 }
 .app-select {
    max-width: 220px;
-   margin: 0 auto;
    width: 100%;
    position: relative;
    &.open {
@@ -339,6 +347,24 @@ label {
          }
       }
    }
+   &.filled {
+      .select__title {
+         background-color: $black;
+         color: $white;
+         & > svg {
+            display: none;
+         }
+         & > button {
+            display: flex;
+         }
+         svg path {
+            fill: $white;
+         }
+         .count {
+            display: block;
+         }
+      }
+   }
    .select {
       &__title {
          position: relative;
@@ -361,7 +387,11 @@ label {
          line-height: 150%; /* 19.5px */
          letter-spacing: -0.143px;
          text-transform: uppercase;
+         .count {
+            display: none;
+         }
          span {
+            pointer-events: none;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -374,6 +404,13 @@ label {
             transition: $transition;
             transform-origin: center;
             translate: 0 -2px;
+            pointer-events: none;
+         }
+         button {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+            display: none;
          }
          @media (hover: hover) {
             &:hover {
@@ -410,7 +447,7 @@ label {
       &__item {
          cursor: pointer;
          color: var(--black-100, #182126);
-         font-family: "TT Firs Neue";
+         font-family: $fontFirs;
          font-size: 14px;
          font-style: normal;
          font-weight: 450;
@@ -454,6 +491,9 @@ label {
    }
 }
 .app-checkbox {
+   display: flex;
+   align-items: center;
+   gap: 8px;
    input {
       display: none;
    }
@@ -565,5 +605,107 @@ label {
    }
    @media (max-width: $mobile) {
       display: block;
+   }
+}
+.pc-tablet {
+   display: flex;
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.app-pagination {
+   margin-top: 88px;
+   @media (max-width: $tablet) {
+      margin-top: 72px;
+   }
+   @media (max-width: $mobile) {
+      margin-top: 56px;
+   }
+   &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--black-5, rgba(0, 0, 0, 0.05));
+      background: var(--white-55, rgba(255, 255, 255, 0.55));
+      padding: 16px 0;
+      @media (max-width: $mobile) {
+         padding: 16px 12px;
+         flex-direction: column;
+         gap: 24px;
+      }
+   }
+   .btn {
+      border: 0;
+      height: 32px;
+      width: 110px;
+      flex: 0 0 110px;
+      @media (max-width: $mobile) {
+         flex: unset;
+      }
+      &::after {
+         // display: none;
+      }
+      p::after {
+         display: none;
+      }
+   }
+   // .app-pagination__items
+   &__items {
+      .disabled {
+         svg path {
+            stroke-opacity: 0.15;
+         }
+      }
+      .active {
+         &::after {
+            height: 110%;
+         }
+         color: $white;
+      }
+      svg path {
+         transition: $transition;
+      }
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      ul {
+         display: flex;
+         align-items: center;
+         gap: 4px;
+         button {
+            width: 24px;
+            height: 24px;
+            flex: 0 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background-color: transparent;
+            color: var(--black-100, #182126);
+            font-family: $fontFirs;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 140%; /* 22.4px */
+            span {
+               position: relative;
+               z-index: 1;
+            }
+            &::after {
+               background-color: $black;
+            }
+            @media (hover: hover) {
+               &:hover {
+                  color: $white !important;
+               }
+            }
+         }
+      }
+      @media (max-width: $mobile) {
+         width: 100%;
+         justify-content: space-between;
+      }
    }
 }
