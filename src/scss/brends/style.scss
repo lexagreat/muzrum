@@ -1,0 +1,224 @@
+.brends-page {
+   margin-bottom: 124px;
+   margin-top: 32px;
+   @media (max-width: $tablet) {
+      margin-bottom: 98px;
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: 80px;
+   }
+   // .brends-page__wrapper
+
+   &__wrapper {
+      display: flex;
+      gap: 56px;
+      @media (max-width: $tablet) {
+         gap: 40px;
+         flex-direction: column;
+      }
+   }
+
+   // .brends-page__desc
+
+   &__desc {
+      height: fit-content;
+      position: sticky;
+      top: var(--header);
+      flex: 0 0 415px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      .body-text {
+         color: #4d4d4d;
+      }
+      @media (max-width: $tablet) {
+         gap: 24px;
+         flex: unset;
+         position: relative;
+         top: unset;
+      }
+   }
+
+   // .brends-page__title
+
+   &__title {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      span {
+         &:nth-child(2) {
+            color: var(--black-15, rgba(0, 0, 0, 0.15));
+            font-family: $fontFirs;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 115%; /* 32.2px */
+            letter-spacing: -0.28px;
+            @media (max-width: $mobile) {
+               font-size: 22px;
+            }
+         }
+      }
+   }
+
+   // .brends-page__main
+
+   &__main {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   // .brends-page__list
+
+   &__list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 694px;
+   }
+
+   // .brends-page__boooks
+
+   &__boooks {
+      flex: 0 0 104px;
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      height: fit-content;
+      position: sticky;
+      top: var(--header);
+      .icon-btn {
+         border: 0 !important;
+         background-color: #fcfcfc;
+         &::after {
+            background-color: rgba(0, 0, 0, 0.15);
+         }
+         &.active {
+            &::after {
+               height: 110%;
+            }
+         }
+      }
+      @media (max-width: $tablet) {
+         flex: unset;
+         padding: 8px;
+      }
+   }
+}
+.brends-link {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 89px;
+   padding: 0 12px;
+   border-radius: 8px;
+   position: relative;
+   overflow: hidden;
+   @media (max-width: $tablet) {
+      height: 84px;
+   }
+   @media (max-width: $mobile) {
+      height: 56px;
+      padding: 0 8px;
+   }
+   &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      background: #f2f2f2;
+      left: 0;
+      top: 0;
+      height: 0;
+      width: 100%;
+      transition: 0.2s ease-in-out;
+   }
+   @media (hover: hover) {
+      &:hover {
+         &::after {
+            height: 100%;
+         }
+         .brends-link {
+            &__items {
+               opacity: 1;
+            }
+         }
+      }
+   }
+   & > * {
+      position: relative;
+      z-index: 2;
+   }
+   // .brends-link__title
+
+   &__title {
+      color: $black;
+   }
+
+   // .brends-link__items
+
+   &__items {
+      padding: 4px;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px;
+      background: var(--white-55, rgba(255, 255, 255, 0.55));
+
+      /* blur 16 */
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: 0.4s;
+      @media (max-width: $tablet) {
+         display: none;
+      }
+   }
+
+   // .brends-link__arrow
+
+   &__arrow {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   // .brends-link__list
+
+   &__list {
+      display: flex;
+      gap: 2px;
+      li {
+         flex: 0 0 48px;
+         height: 48px;
+         border-radius: 2px;
+         border: 1px solid var(--black-5, rgba(0, 0, 0, 0.05));
+         background: var(--white-100, #fff);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 10px 6px;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+         }
+      }
+   }
+   &__count {
+      border-radius: 2px;
+      background: #ff8522 !important;
+      color: var(--black-100, #182126);
+      font-family: $fontFirs;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 450;
+      line-height: 110%; /* 17.6px */
+   }
+}

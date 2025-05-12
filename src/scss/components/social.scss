@@ -83,6 +83,24 @@
       @media (max-width: $mobile) {
          gap: 35px;
       }
+      .social-tab__btns {
+         display: flex;
+         gap: 12px;
+         flex-wrap: wrap;
+         a {
+            white-space: nowrap;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 8px;
+            border-radius: 4px;
+            background: #f2f2f2;
+            @include text-13;
+            color: $black;
+         }
+      }
    }
 
    // .social-section__visual
