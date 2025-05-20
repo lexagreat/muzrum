@@ -1117,8 +1117,8 @@
                   <aside class="account-layout__aside account-aside">
                      <div class="account-aside__wrapper scrollbar-none">
                         <ul class="account-aside__links">
-                           <li><a class="active" href="profile.html">Профиль</a></li>
-                           <li><a href="orders.html">Мои заказы</a></li>
+                           <li><a href="profile.html">Профиль</a></li>
+                           <li><a class="active" href="orders.html">Мои заказы</a></li>
                            <li><a href="appeals.html">Обращения</a></li>
                            <li><a href="favorites.html">Избранное</a></li>
                            <li><a href="history.html">История просмотров</a></li>
@@ -1135,94 +1135,120 @@
                      </div>
                   </aside>
                   <div class="account-layout__main">
-                     <div class="profile-page">
-                        <h1 class="profile-page__title h2">Профиль</h1>
-                        <div class="profile-page__main">
-                           <div class="profile-page__block">
-                              <h5 class="h5 profile-page__subtitle">Личная информация</h5>
-                              <ul class="profile-page__inputs gtc2">
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="Ваше имя"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="Фамилия"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input data-phone type="text"
-                                          placeholder="+ 7 (920) 967-88-39"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="E-mail"></div>
-                                    <span>e-mail нужен для отправки чеков</span>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="profile-page__block">
-                              <h5 class="h5 profile-page__subtitle">Данные для доставки</h5>
-                              <ul class="profile-page__inputs gtc3">
-                                 <li style="grid-column: span 3;">
-                                    <div class="app-input"><input type="text" placeholder="город"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="Улица"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="дом"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="квартира"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="ПОдъезд"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="этаж"></div>
-                                 </li>
-                                 <li>
-                                    <div class="app-input"><input type="text" placeholder="домофон"></div>
-                                 </li>
-                              </ul>
-
-                           </div>
-                           <div class="profile-page__block">
-                              <div class="profile-page__subheader">
-                                 <h5 class="h5 profile-page__subtitle">Управление подписками</h5>
-                                 <p class="profile-page__desc">
-                                    Не пропустите новости и акции Музрум — настройте уведомления удобным для вас
-                                    способом и всегда будьте в курсе главных событий!
-                                 </p>
-                              </div>
-                              <ul class="profile-page__inputs gtc2">
-                                 <li>
-                                    <label class="profile-page__check">
-                                       <div></div>
-                                       <div>
-                                          <span>SMS</span>
-                                          <span>Рассылка раз в месяц</span>
-                                       </div>
-                                       <input type="checkbox">
-                                    </label>
-                                 </li>
-                                 <li>
-                                    <label class="profile-page__check">
-                                       <div></div>
-                                       <div>
-                                          <span>E-mail</span>
-                                          <span>Уникальные спецпредложения в рассылке 2 раза в месяц</span>
-                                       </div>
-                                       <input type="checkbox">
-                                    </label>
-                                 </li>
-                              </ul>
-                           </div>
-                           <button class="btn orange disabled">
-                              <p>сохранить изменения</p>
+                     <div class="order-page">
+                        <a href="#" class="order-page__back">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none">
+                              <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.09338 11.3737L10.9497 5.38637L10.0825 4.5L3.17957 11.5573C2.94012 11.8021 2.94015 12.199 3.17963 12.4437L10.0835 19.5L10.9506 18.6135L5.09367 12.6273H21V11.3737H5.09338Z"
+                                 fill="#182126" />
+                           </svg>
+                           <span>Назад</span>
+                        </a>
+                        <div class="order-page__header">
+                           <div>
+                              <h1 class="h3">Заказ №250043</h1>
                               <p>
-                                 <span>сохранить изменения</span>
+                                 <span class="circle" style="background-color: #FF8522;"></span>
+                                 <span>Оформлен</span>
                               </p>
-
-                           </button>
+                           </div>
+                           <span>от 5 апреля 2025</span>
                         </div>
+                        <div class="order-page__delivery">
+                           <h3 class="order-page__subtitle h5">Доставка</h3>
+                           <div class="checkout-delivery__showroom checkout-page__block">
+                              <ul>
+                                 <li>
+                                    <label>
+                                       <span class="body-text">Курьер Музрум</span>
+                                       <span style="color: rgba(0, 0, 0, 0.50);" class="caption">г. Москва, Поклонная
+                                          улица, 12к2, кв.76</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="order-page__info">
+                           <h3 class="order-page__subtitle h5">Товары в заказе</h3>
+                           <ul class="order-page__products">
+                              <li>
+                                 <a href="#" class="article-compil__product">
+                                    <div class="article-compil__image">
+                                       <img src="img/account-order.png" alt="">
+                                    </div>
+                                    <div class="article-compil__main">
+                                       <span class="body-text">Цифровое пианино Korg C1 AIR BK</span>
+                                       <p class="article-compil__price">
+                                          <span style="text-decoration: line-through;">168 900 ₽</span>
+                                          <span style="color: #FF8522;">128 900 ₽</span>
+                                       </p>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#" class="article-compil__product">
+                                    <div class="article-compil__image">
+                                       <img src="img/account-order.png" alt="">
+                                    </div>
+                                    <div class="article-compil__main">
+                                       <span class="body-text">Цифровое пианино Korg C1 AIR BK</span>
+                                       <p class="article-compil__price">
+                                          <span style="text-decoration: line-through;">168 900 ₽</span>
+                                          <span style="color: #FF8522;">128 900 ₽</span>
+                                       </p>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#" class="article-compil__product">
+                                    <div class="article-compil__image">
+                                       <img src="img/account-order.png" alt="">
+                                    </div>
+                                    <div class="article-compil__main">
+                                       <span class="body-text">Цифровое пианино Korg C1 AIR BK</span>
+                                       <p class="article-compil__price">
+                                          <span style="text-decoration: line-through;">168 900 ₽</span>
+                                          <span style="color: #FF8522;">128 900 ₽</span>
+                                       </p>
+                                    </div>
+                                 </a>
+                              </li>
+                           </ul>
+                           <ul class="order-page__items">
+                              <li>
+                                 <span>3 товара</span>
+                                 <span>259 018 ₽</span>
+                              </li>
+                              <li>
+                                 <span>Скидка</span>
+                                 <span style="color: #FF8522;">11 738 ₽</span>
+                              </li>
+                              <li>
+                                 <span>Скидка по промокоду</span>
+                                 <span style="color: #FF8522;">1000 ₽</span>
+                              </li>
+                              <li>
+                                 <span>Доставка</span>
+                                 <span>0 ₽</span>
+                              </li>
+                              <li>
+                                 <span>Способ оплаты</span>
+                                 <span>Онлайн-оплата</span>
+                              </li>
+                              <li>
+                                 <span>Сумма заказа</span>
+                                 <span>246 280 ₽</span>
+                              </li>
+                           </ul>
+                        </div>
+                        <button class="btn white-on-orange">
+                           <p>отменить заказ</p>
+                           <p>
+                              <span>отменить заказ</span>
+                           </p>
+                        </button>
                      </div>
                   </div>
                </div>

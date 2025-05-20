@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Личный кабинет</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="account-layout">
+            <div class="container">
+               <div class="account-layout__wrapper">
+                  <aside class="account-layout__aside account-aside">
+                     <div class="account-aside__wrapper scrollbar-none">
+                        <ul class="account-aside__links">
+                           <li><a href="profile.html">Профиль</a></li>
+                           <li><a href="orders.html">Мои заказы</a></li>
+                           <li><a class="active" href="appeals.html">Обращения</a></li>
+                           <li><a href="favorites.html">Избранное</a></li>
+                           <li><a href="history.html">История просмотров</a></li>
+                        </ul>
+                        <button>
+                           Выйти
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
+                              fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.37922 8.71292L5 4.68353L5.83284 4L11 8.75438L5.80899 13L5.02386 12.2751L9.37922 8.71292Z"
+                                 fill="#4D4D4D" />
+                           </svg>
+                        </button>
+                     </div>
+                  </aside>
+                  <div class="account-layout__main">
+                     <div class="appeals-page">
+                        <div class="appeals-page__new">
+                           <div class="cart-page__header">
+                              <ul class="cart-page__tabs">
+                                 <li>
+                                    <label>
+                                       <input checked type="radio">
+                                       <span class="h2">Обращения</span><sup>2</sup>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="appeal-new">
+                              <div class="appeal-new__title h5">Новое обращение</div>
+                              <div class="appeal-new__main">
+                                 <div class="appeal-new__select app-select" id="appeal-new"></div>
+                                 <div class="app-input appeal-new__textarea">
+                                    <textarea name="" id="" placeholder="текст обращения"></textarea>
+                                 </div>
+                                 <div class="appeal-new__file appeal-file">
+                                    <label>
+                                       <input type="file">
+                                       <div class="btn transparent">
+                                          <p>выберите файл</p>
+                                          <p>
+                                             <span>выберите файл</span>
+                                          </p>
+                                       </div>
+                                    </label>
+                                    <div class="appeal-file__name">
+                                       <span>name_name.jpg</span>
+                                       <button>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                             <path d="M7 7L17 16.8995M7 17L17 7.10051" stroke="#FF8522"
+                                                stroke-width="1.35714" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <button class="btn orange appeal-new__btn disabled">
+                                 <p>отправить</p>
+                                 <p>
+                                    <span>отправить</span>
+                                 </p>
+                              </button>
+                           </div>
+                        </div>
+                        <div class="appeals-page__old">
+                           <h5 class="h5 appeals-page__subtitle">Мои обращения</h5>
+                           <ul class="appeals-page__list">
+                              <li class="appeals-page__item appeal-card">
+                                 <p>
+                                    <span>Тема:</span> Вопрос
+                                 </p>
+                                 <p>
+                                    Какой минимальный первоначальный взнос требуется для оформления рассрочки?
+                                 </p>
+                              </li>
+                              <li class="appeals-page__item appeal-card">
+                                 <p>
+                                    <span>Тема:</span> Вопрос
+                                 </p>
+                                 <p>
+                                    Могут ли измениться сроки поставки после предзаказа? Как об этом сообщат?
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+   <script>
+      const brandSelect = new Select("#appeal-new", {
+         placeholder: "Бренд",
+         selectedId: "asd1",
+         multi: false,
+         data: [
+            { value: "вопрос", id: "asd1" },
+            { value: "благодарность", id: "asd2" },
+            { value: "жалоба", id: "asd3" },
+            { value: "возврат", id: "asd4" },
+            { value: "предзаказ", id: "asd5" },
+         ],
+      });
+      const fileInput = document.querySelector('.appeal-file input')
+      const fileLabel = document.querySelector('.appeal-file label')
+      const fileNameWrapper = document.querySelector('.appeal-file__name')
+      const fileName = document.querySelector('.appeal-file__name span')
+      const fileRemoveBtn = document.querySelector('.appeal-file__name button')
+      fileInput.addEventListener('change', (e) => {
+         fileName.innerHTML = e.target.files[0].name
+         fileNameWrapper.style.display = "flex"
+         fileLabel.style.display = "none"
+      })
+      fileRemoveBtn.addEventListener('click', (e) => {
+         fileName.innerHTML = ""
+         fileNameWrapper.style.display = "none"
+         fileLabel.style.display = ""
+
+      })
+   </script>
+
+</body>
+
+</html>

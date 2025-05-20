@@ -1,0 +1,223 @@
+.help-page {
+   padding-bottom: var(--sectionMargin);
+   margin-top: 40px;
+   @media (max-width: $tablet) {
+      margin-top: 32px;
+   }
+   @media (max-width: $mobile) {
+      margin-top: 24px;
+   }
+   // .help-page__wrapper
+
+   &__wrapper {
+      display: flex;
+      gap: 225px;
+      @media (max-width: $tablet) {
+         gap: 32px;
+         flex-direction: column;
+      }
+      @media (max-width: $mobile) {
+         gap: 24px;
+      }
+   }
+
+   // .help-page__aside
+
+   &__aside {
+      flex: 0 0 128px;
+      ul {
+         display: flex;
+         flex-direction: column;
+         gap: 8px;
+         a {
+            @include h4;
+            color: rgba($color: #000000, $alpha: 0.15);
+            transition: 0.3s;
+            &.active {
+               color: $black;
+            }
+            @media (max-width: $tablet) {
+               @include h5;
+            }
+            @media (max-width: $mobile) {
+               @include text-16;
+            }
+         }
+         @media (max-width: $tablet) {
+            flex-direction: row;
+            gap: 16px;
+         }
+         @media (max-width: $mobile) {
+            gap: 12px;
+            margin-left: calc(-1 * var(--container));
+            margin-right: calc(-1 * var(--container));
+            padding-right: calc(1 * var(--container));
+            padding-left: calc(1 * var(--container));
+            width: 100vw;
+            overflow: auto;
+         }
+      }
+      @media (max-width: $tablet) {
+         flex: unset;
+      }
+   }
+
+   // .help-page__main
+
+   &__main {
+      flex: 0 0 693px;
+      display: flex;
+      flex-direction: column;
+      gap: 88px;
+      @media (max-width: $tablet) {
+         gap: 72px;
+      }
+      @media (max-width: $mobile) {
+         gap: 56px;
+      }
+   }
+
+   // .help-page__block
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      @media (max-width: $tablet) {
+         gap: 28px;
+      }
+      @media (max-width: $mobile) {
+         gap: 20px;
+         & > .h3 {
+            @include h2-mobile;
+         }
+      }
+      & > .btn {
+         margin-top: 8px;
+         @media (max-width: $tablet) {
+            margin-top: 12px;
+         }
+         @media (max-width: $mobile) {
+            width: 100%;
+         }
+      }
+   }
+
+   // .help-page__subblock
+
+   &__subblock {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @media (max-width: $mobile) {
+         gap: 20px;
+      }
+   }
+
+   // .help-page__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: #fff;
+      li {
+         display: flex;
+         color: rgba(0, 0, 0, 0.5);
+         font-size: 14px;
+         font-weight: 450;
+         line-height: 150%; /* 21px */
+         letter-spacing: -0.14px;
+         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+         p {
+            display: flex;
+            // align-items: center;
+            &:nth-child(1) {
+               flex: 0 0 388px;
+               padding: 16px;
+               border-right: 1px solid rgba(0, 0, 0, 0.05);
+               @media (max-width: $mobile) {
+                  flex: 0 0 228px;
+                  padding: 12px;
+               }
+            }
+            &:nth-child(2) {
+               flex: 1;
+               padding: 16px;
+               padding-left: 20px;
+               color: $black;
+               @media (max-width: $mobile) {
+                  padding: 12px;
+               }
+            }
+         }
+      }
+   }
+}
+.payment-page {
+   &__list {
+      li {
+         @media (max-width: $mobile) {
+            flex-direction: column;
+         }
+         p {
+            border-right: 0 !important;
+            &:nth-child(1) {
+               @media (max-width: $mobile) {
+                  flex: unset;
+                  padding-bottom: 0;
+                  padding-left: 20px;
+                  padding-top: 20px;
+               }
+            }
+            &:nth-child(2) {
+               @media (max-width: $mobile) {
+                  padding: 20px;
+               }
+            }
+         }
+      }
+   }
+}
+.refund-page {
+   // .refund-page__list
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      li {
+         display: flex;
+         flex-direction: column;
+         gap: 16px;
+         padding: 24px;
+         border-radius: 8px;
+         border: 1px solid rgba(0, 0, 0, 0.05);
+
+         p {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+            font-weight: 450;
+            line-height: 150%; /* 21px */
+            letter-spacing: -0.14px;
+         }
+         img {
+            width: 28px;
+            height: 28px;
+            flex: 0 0 28px;
+            object-fit: contain;
+         }
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: 1fr;
+         gap: 8px;
+         li {
+            padding: 12px;
+            .h5 {
+               @include text-16;
+            }
+         }
+      }
+   }
+}

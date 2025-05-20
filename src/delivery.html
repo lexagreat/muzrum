@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Помощь</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="help-page">
+            <div class="container">
+               <div class="help-page__wrapper">
+                  <aside class="help-page__aside">
+                     <ul class="scrollbar-none">
+                        <li><a class="active" href="delivery.html">Доставка</a></li>
+                        <li><a href="payment.html">Оплата</a></li>
+                        <li><a href="refund.html">Возврат</a></li>
+                        <li><a href="garanties.html">Гарантии</a></li>
+                     </ul>
+                  </aside>
+                  <div class="help-page__main">
+                     <div class="help-page__block">
+                        <h3 class="h3">Условия доставки при покупке инструментов</h3>
+                        <div class="help-page__subblock">
+                           <ul class="help-page__list">
+                              <li>
+                                 <p>При заказе от 50 000 ₽ (внутри МКАД)</p>
+                                 <p>0 ₽</p>
+                              </li>
+                              <li>
+                                 <p>При заказе до 50 000 ₽ (внутри МКАД)</p>
+                                 <p>1 500 ₽</p>
+                              </li>
+                              <li>
+                                 <p>Доставка в Московскую область</p>
+                                 <p>от 1 000 ₽</p>
+                              </li>
+                              <li>
+                                 <p>Доставка по РФ</p>
+                                 <p>Индивиуально</p>
+                              </li>
+                           </ul>
+                           <p class="body-text" style="color: #4D4D4D;">Доставка по РФ рассчитывается отдельно, и часть
+                              затрат на перевозку мы берем на себя. Обычно доставка по РФ стоит от 2 500 ₽ для
+                              компактных пианино и от 4 000 ₽ для цифровых пианино в деревянном корпусе. Срок доставки
+                              по РФ от 2 дней, в зависимости от региона, точно рассчитывается при оформлении заказа.</p>
+                        </div>
+                        <button class="btn orange">
+                           <p>Рассчитать</p>
+                           <p>
+                              <span>Рассчитать</span>
+                           </p>
+                        </button>
+                     </div>
+                     <div class="help-page__block">
+                        <h3 class="h3">Условия доставки при аренде инструментов</h3>
+                        <div class="help-page__subblock">
+                           <ul class="help-page__list">
+                              <li>
+                                 <p>По Москве внутри МКАД</p>
+                                 <p>1 500 ₽</p>
+                              </li>
+                              <li>
+                                 <p>До 20 км от МКАД</p>
+                                 <p>2 000 ₽</p>
+                              </li>
+                              <li>
+                                 <p>Срок доставки</p>
+                                 <p>1-2 дня</p>
+                              </li>
+                              <li>
+                                 <p>Доставка в дальнее Подмосковье</p>
+                                 <p>Индивиуально</p>
+                              </li>
+
+                           </ul>
+                           <p class="body-text" style="color: #4D4D4D;">
+                              Важно! В стоимость доставки входит установка, настройка инструмента и вывоз по окончании
+                              аренды. <br>
+                              Доставка в дальнее Подмосковье рассчитывается индивидуально.
+
+                           </p>
+                        </div>
+                        <button class="btn">
+                           <p>Рассчитать</p>
+                           <p>
+                              <span>Рассчитать</span>
+                           </p>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+
+
+</body>
+
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Личный кабинет</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="account-layout">
+            <div class="container">
+               <div class="account-layout__wrapper">
+                  <aside class="account-layout__aside account-aside">
+                     <div class="account-aside__wrapper scrollbar-none">
+                        <ul class="account-aside__links">
+                           <li><a href="profile.html">Профиль</a></li>
+                           <li><a href="orders.html">Мои заказы</a></li>
+                           <li><a href="appeals.html">Обращения</a></li>
+                           <li><a href="favorites.html">Избранное</a></li>
+                           <li><a class="active" href="history.html">История просмотров</a></li>
+                        </ul>
+                        <button>
+                           Выйти
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
+                              fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.37922 8.71292L5 4.68353L5.83284 4L11 8.75438L5.80899 13L5.02386 12.2751L9.37922 8.71292Z"
+                                 fill="#4D4D4D" />
+                           </svg>
+                        </button>
+                     </div>
+                  </aside>
+                  <div class="account-layout__main">
+                     <div class="history-page">
+                        <h1 class="history-page__title">История просмотров</h1>
+                        <div class="history-page__main">
+                           <div class="history-page__block">
+                              <div class="history-page__header">
+                                 4 апреля 2025
+                              </div>
+                              <ul class="history-page__list">
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+
+                           </div>
+                           <div class="history-page__block">
+                              <div class="history-page__header">
+                                 4 апреля 2025
+                              </div>
+                              <ul class="history-page__list">
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="product-card">
+                                       <div class="product-card__image">
+                                          <ul class="product-card__tags">
+                                             <li class="tag-text black">new</li>
+                                          </ul>
+                                          <div class="product-card__bg">
+                                             <img src="img/product-previw.webp" alt="">
+                                             <button class="btn transparent">
+                                                <p>в корзину</p>
+                                                <p>
+                                                   <span>в корзину</span>
+                                                </p>
+                                             </button>
+                                          </div>
+                                          <img src="img/product1.webp" alt="">
+                                       </div>
+                                       <div class="product-card__main">
+                                          <div class="product-card__header">
+                                             <div class="product-card__name">
+                                                <a href="#">Цифровое пианино Casio Privia PX-870 BK</a>
+                                                <div class="product-card__color">
+                                                   <ul>
+                                                      <li>
+                                                         <label>
+                                                            <input checked type="radio" name="product10-color"
+                                                               value="0">
+                                                         </label>
+                                                      </li>
+                                                      <li>
+                                                         <label>
+                                                            <input type="radio" name="product10-color" value="1">
+                                                         </label>
+                                                      </li>
+                                                      <span data-tab-name="product10-color" class="active"
+                                                         data-tab="0">Черный</span>
+                                                      <span data-tab-name="product10-color" data-tab="1">Белый</span>
+                                                   </ul>
+                                                </div>
+                                             </div>
+                                             <ul class="product-card__actions">
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path d="M5 12.3333H6.16667V16.5H5V12.3333Z" fill="#182126" />
+                                                         <path d="M9.5 4H10.6667V16.5H9.5V4Z" fill="#182126" />
+                                                         <path d="M14 9H15.1667V16.5H14V9Z" fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                                <li>
+                                                   <button>
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                         viewBox="0 0 20 20" fill="none">
+                                                         <path
+                                                            d="M9.58564 11.9463L6.86233 13.8993V4.36433H13.1375V13.8993L10.4142 11.9463L10.0486 11.7632L9.99992 11.7389L9.95129 11.7632L9.58564 11.9463ZM5.83325 15.6572V15.8335L5.99063 15.7547L9.99992 12.9133L14.0092 15.7547L14.1666 15.8335V15.6572V4.2554C14.1666 4.0109 14.0696 3.77641 13.8971 3.60351C13.7244 3.43063 13.4904 3.3335 13.2462 3.3335H6.75358C6.5095 3.3335 6.2754 3.43063 6.10281 3.60351C5.93021 3.77641 5.83325 4.0109 5.83325 4.2554V15.6572Z"
+                                                            fill="#182126" />
+                                                      </svg>
+                                                   </button>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                          <div class="price-text product-card__price">
+                                             <span>129 900 ₽</span>
+                                             <span>116 100 ₽</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+
+                           </div>
+                        </div>
+                        <div class="history-page__pagination">
+                           <section class="app-pagination">
+                              <div class="app-pagination__wrapper">
+                                 <ul class="app-pagination__items">
+                                    <li>
+                                       <button class="disabled">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                             viewBox="0 0 12 12" fill="none">
+                                             <path d="M9.25 10.5L4.75 6L9.25 2" stroke="black" stroke-opacity="1" />
+                                             <path d="M2.25 2V11" stroke="black" stroke-opacity="1" />
+                                          </svg>
+                                       </button>
+                                    </li>
+                                    <li>
+                                       <button class="disabled">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                             viewBox="0 0 12 12" fill="none">
+                                             <path d="M8.5 11L4 6.5L8.5 2.5" stroke="black" stroke-opacity="1" />
+                                          </svg>
+                                       </button>
+                                    </li>
+                                    <li>
+                                       <ul>
+                                          <li><button class="icon-btn active"><span>1</span></button></li>
+                                          <li><button class="icon-btn"><span>2</span></button></li>
+                                          <li><button class="icon-btn"><span>3</span></button></li>
+                                          <li><button class="icon-btn"><span>4</span></button></li>
+                                          <li><button class="icon-btn"><span>…</span></button></li>
+                                          <li><button class="icon-btn"><span>15</span></button></li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <button>
+                                          <svg style="rotate: 180deg;" xmlns="http://www.w3.org/2000/svg" width="12"
+                                             height="12" viewBox="0 0 12 12" fill="none">
+                                             <path d="M9.25 10.5L4.75 6L9.25 2" stroke="black" stroke-opacity="1" />
+                                             <path d="M2.25 2V11" stroke="black" stroke-opacity="1" />
+                                          </svg>
+                                       </button>
+                                    </li>
+                                    <li>
+                                       <button>
+                                          <svg style="rotate: 180deg;" xmlns="http://www.w3.org/2000/svg" width="12"
+                                             height="12" viewBox="0 0 12 12" fill="none">
+                                             <path d="M8.5 11L4 6.5L8.5 2.5" stroke="black" stroke-opacity="1" />
+                                          </svg>
+                                       </button>
+                                    </li>
+                                 </ul>
+                                 <button class="btn transparent">
+                                    <p>Показать еще</p>
+                                    <p>
+                                       <span>Показать еще</span>
+                                    </p>
+
+                                 </button>
+                              </div>
+                           </section>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+   <script>
+      const brandSelect = new Select("#appeal-new", {
+         placeholder: "Бренд",
+         selectedId: "asd1",
+         multi: false,
+         data: [
+            { value: "вопрос", id: "asd1" },
+            { value: "благодарность", id: "asd2" },
+            { value: "жалоба", id: "asd3" },
+            { value: "возврат", id: "asd4" },
+            { value: "предзаказ", id: "asd5" },
+         ],
+      });
+      const fileInput = document.querySelector('.appeal-file input')
+      const fileLabel = document.querySelector('.appeal-file label')
+      const fileNameWrapper = document.querySelector('.appeal-file__name')
+      const fileName = document.querySelector('.appeal-file__name span')
+      const fileRemoveBtn = document.querySelector('.appeal-file__name button')
+      fileInput.addEventListener('change', (e) => {
+         fileName.innerHTML = e.target.files[0].name
+         fileNameWrapper.style.display = "flex"
+         fileLabel.style.display = "none"
+      })
+      fileRemoveBtn.addEventListener('click', (e) => {
+         fileName.innerHTML = ""
+         fileNameWrapper.style.display = "none"
+         fileLabel.style.display = ""
+
+      })
+   </script>
+
+</body>
+
+</html>

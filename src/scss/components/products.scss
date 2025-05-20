@@ -335,6 +335,9 @@
       display: flex;
       gap: 2px;
       align-items: center;
+      @media (max-width: $mobile) {
+         display: none;
+      }
    }
 
    // .product-card__price

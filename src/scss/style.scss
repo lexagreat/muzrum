@@ -8,6 +8,7 @@
 @import "about/style";
 @import "blog/style";
 @import "profile/style";
+@import "help/style";
 
 html.lenis,
 html.lenis body {
@@ -28,4 +29,32 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
    pointer-events: none;
+}
+.document-page {
+   padding-bottom: var(--sectionMargin);
+   margin-top: 32px;
+   // .document-page__wrapper
+   padding-top: 12px;
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 930px;
+      margin: 0 auto;
+      @media (max-width: $tablet) {
+         gap: 28px;
+      }
+      @media (max-width: $mobile) {
+         gap: 20px;
+         .h3 {
+            @include h2-mobile;
+         }
+      }
+   }
+
+   // .document-page__main
+
+   &__main {
+   }
 }
