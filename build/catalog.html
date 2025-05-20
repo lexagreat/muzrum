@@ -333,7 +333,7 @@
                </div>
             </li>
             <li class="search-hide">
-               <a href="#">
+               <a href="#authModal" class="modal__link">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                      <path
                         d="M19.1998 19.4629V17.5387C19.1998 16.3915 18.744 15.2911 17.9327 14.4799C17.1215 13.6687 16.0212 13.2129 14.874 13.2129H9.12562C7.97834 13.2129 6.87805 13.6687 6.06681 14.4799C5.25556 15.2911 4.7998 16.3915 4.7998 17.5387V19.4629H6.24174V17.5387C6.24174 16.7738 6.54558 16.0404 7.08641 15.4995C7.62724 14.9587 8.36077 14.6548 9.12562 14.6548H14.874C15.2526 14.6548 15.6276 14.7294 15.9776 14.8743C16.3275 15.0193 16.6453 15.2317 16.9132 15.4995C17.181 15.7673 17.3934 16.0852 17.5383 16.4352C17.6832 16.785 17.7579 17.16 17.7579 17.5387V19.4629H19.1998ZM12.0986 5.04191C12.669 5.04191 13.2265 5.21105 13.7008 5.52793C14.175 5.84482 14.5447 6.29522 14.7629 6.82217C14.9812 7.34914 15.0384 7.929 14.9271 8.4884C14.8158 9.04782 14.5411 9.56169 14.1377 9.965C13.7344 10.3683 13.2206 10.643 12.6612 10.7543C12.1018 10.8655 11.5219 10.8084 10.995 10.5901C10.468 10.3719 10.0176 10.0022 9.70073 9.52799C9.38384 9.05374 9.2147 8.49617 9.2147 7.92579C9.2147 7.16095 9.51854 6.42741 10.0594 5.88658C10.6002 5.34575 11.3337 5.04191 12.0986 5.04191ZM12.0986 3.59998C11.243 3.59998 10.4067 3.85368 9.69529 4.32901C8.98392 4.80434 8.42946 5.47993 8.10205 6.27037C7.77464 7.06081 7.68897 7.93059 7.85588 8.76972C8.02279 9.60884 8.43479 10.3796 9.03977 10.9846C9.64474 11.5896 10.4155 12.0016 11.2547 12.1685C12.0938 12.3354 12.9636 12.2497 13.754 11.9223C14.5445 11.5949 15.2201 11.0405 15.6954 10.3291C16.1707 9.61771 16.4244 8.78135 16.4244 7.92579C16.4244 6.77851 15.9687 5.67823 15.1574 4.86698C14.3461 4.05573 13.2459 3.59998 12.0986 3.59998Z"
@@ -1014,6 +1014,87 @@
                </p>
             </a>
          </div>
+      </div>
+   </div>
+
+</div>
+<div class="modal auth-modal" id="authModal">
+   <div class="modal__content filters-modal__content">
+      <div class="filters-modal__header">
+         <span class="txt-13">войти или зарегистрироваться</span>
+         <p class="txt-13" style="align-items: center;
+         gap: 12px;">
+            <button>
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                     d="M2.47451 8.90146L7.15958 13.6913L6.4658 14.4004L0.943457 8.75456C0.751901 8.55872 0.751923 8.24123 0.943506 8.04542L6.46663 2.40039L7.16032 3.10959L2.47474 7.89857H15.1998V8.90146H2.47451Z"
+                     fill="#182126" />
+               </svg>
+            </button>
+            подтвердите номер
+         </p>
+         <button class="modal__close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+               <path d="M7 7L17 16.8995M7 17L17 7.10051" stroke="#FF8522" stroke-width="1.35714" />
+            </svg>
+         </button>
+      </div>
+      <div class="auth-modal__main">
+         <div class="auth-modal__form">
+            <p class="body-text" style="color: rgba(0, 0, 0, 0.50);">
+               Здесь удобно следить за статусом заказа, историей просмотров и управлять подписками
+            </p>
+
+            <ul class="auth-modal__tabs">
+               <li>
+                  <label>
+                     <input checked type="radio" name="auth-modal-tabs" value="0">
+                     по телефону
+                  </label>
+               </li>
+               <li>
+                  <label>
+                     <input type="radio" name="auth-modal-tabs" value="1">
+                     по e-mail
+                  </label>
+               </li>
+            </ul>
+            <div class="auth-modal__mainform">
+               <div data-tab="0" class="active">
+                  <div class="app-input">
+                     <input type="text" name="auth-phone" placeholder="+ 7 (999) 999-99-99" data-phone>
+                  </div>
+               </div>
+               <div data-tab="1">
+                  <div class="app-input">
+                     <input type="text" placeholder="E-mail" name="auth-email">
+                  </div>
+               </div>
+               <button class="icon-btn">
+                  <div class="loader"></div>
+                  <span>Получить код</ы>
+               </button>
+            </div>
+
+         </div>
+         <div class="auth-modal__code">
+            <p class="body-text" style="color: rgba(0, 0, 0, 0.50);">
+               Мы отправили код на номер
+               <span style="color: #182126;">+ 7 (920) 965-77-21</span>
+            </p>
+            <div class="app-input" style="margin-top: 56px;margin-bottom: 20px;">
+               <input type="text" placeholder="введите код">
+            </div>
+            <p class="caption" style="color: rgba(0, 0, 0, 0.50);">Запросить новый код можно через <span
+                  style="color: #182126;">00:28</span></p>
+         </div>
+         <p class="caption" style="color: rgba(0, 0, 0, 0.50);">
+            Нажимая на кнопку «Получить код» я даю согласие на обработку своих персональных данных в соответсвии
+            <a href="#" target="_blank"
+               style="color: rgba(0, 0, 0, 0.50);border-bottom: 1px solid rgba(0, 0, 0, 0.50);">с политикой
+               конфиденциальности</a>
+         </p>
+
       </div>
    </div>
 </div>

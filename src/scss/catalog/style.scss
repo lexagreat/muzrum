@@ -435,6 +435,13 @@
          top: 20px;
          bottom: 20px;
       }
+      @media (max-width: $mobile) {
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         border-radius: 0;
+      }
    }
 
    // .filters-modal__header

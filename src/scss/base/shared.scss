@@ -728,3 +728,9 @@ label {
       }
    }
 }
+
+@media (max-width: $mobile) {
+   input {
+      font-size: 16px !important;
+   }
+}

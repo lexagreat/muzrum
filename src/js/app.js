@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
    checkoutPage();
    brendsPage();
    aboutPage();
+   articlePage();
+   authModal();
 });
 function aboutPage() {
    function hero() {
@@ -1267,7 +1269,124 @@ function brendsPage() {
    }
    useNavigation();
 }
+function articlePage() {
+   const hero = () => {
+      const bg = document.querySelector(".article-hero__bg");
+      if (!bg) return;
+      gsap.to(bg, {
+         scrollTrigger: {
+            trigger: ".home-page", // элемент, который должен запускать анимацию
+            start: window.innerWidth > 768 ? "top 50%" : "top 20%", // когда верх элемента достигает 80% высоты экрана
+            end: "top -20%", // когда низ элемента достигает 20% высоты экрана
+            // markers: true, // включить маркеры для визуальной отладки
+            scrub: 1.5,
+         },
+         opacity: 1,
+      });
+   };
 
+   const more = () => {
+      let selectedItem = document.querySelector(`.article-more .swiper`);
+      if (!selectedItem) return;
+      let swiper = new Swiper(selectedItem, {
+         slidesPerView: "auto",
+         spaceBetween: 12,
+
+         pagination: {
+            el: `.article-more .swiper-pagination`,
+            type: "progressbar",
+         },
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+         breakpoints: {
+            1025: {
+               slidesPerView: 4,
+               spaceBetween: 12,
+            },
+            569: {
+               slidesPerView: "auto",
+               spaceBetween: 12,
+            },
+         },
+      });
+   };
+   const subscribe = () => {
+      const btn = document.querySelector(".article-subscribe__form button");
+      if (!btn) return;
+      btn.onclick = () => {
+         document.querySelector(".article-subscribe__form").style.display =
+            "none";
+         document.querySelector("#thanks").style.display = "block";
+      };
+   };
+   hero();
+   more();
+   subscribe();
+}
+function authModal() {
+   tabs("[name='auth-modal-tabs']", ".auth-modal__mainform [data-tab]");
+   const wrapper = document.querySelector(".auth-modal");
+   const tabItems = document.querySelectorAll("[name='auth-modal-tabs']");
+   const btn = document.querySelector(".auth-modal__mainform .icon-btn");
+   const returnBtn = document.querySelector(
+      ".auth-modal .filters-modal__header p button"
+   );
+   const phoneInput = document.querySelector(
+      ".auth-modal__mainform [name='auth-phone']"
+   );
+   const emailInput = document.querySelector(
+      ".auth-modal__mainform [name='auth-email']"
+   );
+   const validateInput = () => {
+      btn.classList.add("disabled");
+      phoneInput.oninput = () => {
+         if (phoneInput.value.length == 18) {
+            btn.classList.remove("disabled");
+         } else {
+            btn.classList.add("disabled");
+         }
+      };
+      emailInput.oninput = () => {
+         if (validEmail(emailInput.value)) {
+            btn.classList.remove("disabled");
+         } else {
+            btn.classList.add("disabled");
+         }
+      };
+      tabItems.forEach((tab) => {
+         tab.onchange = () => {
+            console.log(tab.value);
+            if (tab.value == 0) {
+               if (phoneInput.value.length == 18) {
+                  btn.classList.remove("disabled");
+               } else {
+                  btn.classList.add("disabled");
+               }
+            }
+            if (tab.value == 1) {
+               if (validEmail(emailInput.value)) {
+                  btn.classList.remove("disabled");
+               } else {
+                  btn.classList.add("disabled");
+               }
+            }
+         };
+      });
+   };
+   btn.onclick = () => {
+      btn.classList.add("loader");
+      setTimeout(() => {
+         wrapper.classList.add("step-2");
+      }, 500);
+   };
+   returnBtn.onclick = () => {
+      wrapper.classList.remove("step-2");
+      btn.classList.remove("loader");
+   };
+   validateInput();
+}
 function productSlider(selector) {
    let selectedItem = document.querySelector(`${selector} .swiper`);
    if (!selectedItem) return;
@@ -2170,3 +2289,8 @@ document.addEventListener("keydown", function (e) {
       popupClose(popupActive);
    }
 });
+function validEmail(email) {
+   var re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   return re.test(email);
+}
