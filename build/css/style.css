@@ -16768,6 +16768,7 @@ html.lenis body {
 .header-search-input input {
   position: relative;
   padding-left: 36px;
+  background-color: white;
 }
 @media (max-width: 1024px) {
   .header-search-input input {
