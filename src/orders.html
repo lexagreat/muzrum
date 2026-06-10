@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Личный кабинет</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="account-layout">
+            <div class="container">
+               <div class="account-layout__wrapper">
+                  <aside class="account-layout__aside account-aside">
+                     <div class="account-aside__wrapper scrollbar-none">
+                        <ul class="account-aside__links">
+                           <li><a href="profile.html">Профиль</a></li>
+                           <li><a class="active" href="orders.html">Мои заказы</a></li>
+                           <li><a href="appeals.html">Обращения</a></li>
+                           <li><a href="favorites.html">Избранное</a></li>
+                           <li><a href="history.html">История просмотров</a></li>
+                        </ul>
+                        <button>
+                           Выйти
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
+                              fill="none">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.37922 8.71292L5 4.68353L5.83284 4L11 8.75438L5.80899 13L5.02386 12.2751L9.37922 8.71292Z"
+                                 fill="#4D4D4D" />
+                           </svg>
+                        </button>
+                     </div>
+                  </aside>
+                  <div class="account-layout__main">
+                     <div class="orders-page">
+                        <div class="cart-page__header">
+                           <ul class="cart-page__tabs">
+                              <li>
+                                 <label>
+                                    <input checked type="radio" name="cart-tabs" value="0">
+                                    <span class="h2">Покупка</span><sup>3</sup>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input type="radio" name="cart-tabs" value="1">
+                                    <span class="h2">Аренда</span><sup>3</sup>
+                                 </label>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="orders-page__main">
+                           <ul class="orders-page__list">
+                              <li class="order-card">
+                                 <div class="order-card__header">
+                                    <div class="order-card__left">
+                                       <p class="order-card__info">
+                                          <span>Заказ №250043</span>
+                                          <span>от 5 апреля 2025</span>
+                                       </p>
+                                       <span class="order-card__status orange">оформлен</span>
+                                       <ul class="order-card__details">
+                                          <li>
+                                             <span>Доставка:</span>Курьер Музрум <br>
+                                             г. Москва, Поклонная улица, 12к2, кв.76
+                                          </li>
+                                          <li>
+                                             <span>Способ оплаты:</span>Онлайн-оплата
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="order-card__right">
+                                       <p class="order-card__pricing">
+                                          <span>210 540 ₽</span><span>3 товара</span>
+                                       </p>
+                                       <ul class="order-card__products">
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <div class="order-card__footer">
+                                    <button class="btn white-on-orange">
+                                       <p>отменить заказ</p>
+                                       <p>
+                                          <span>отменить заказ</span>
+                                       </p>
+                                    </button>
+                                    <a href="#" class="order-card__link">
+                                       <span>Детали заказа</span>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none">
+                                          <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M18.9066 11.3737L13.0503 5.38637L13.9175 4.5L20.8204 11.5573C21.0599 11.8021 21.0599 12.199 20.8204 12.4437L13.9165 19.5L13.0494 18.6135L18.9063 12.6273H3V11.3737H18.9066Z"
+                                             fill="#182126" />
+                                       </svg>
+                                    </a>
+                                 </div>
+                              </li>
+                              <li class="order-card">
+                                 <div class="order-card__header">
+                                    <div class="order-card__left">
+                                       <p class="order-card__info">
+                                          <span>Заказ №250043</span>
+                                          <span>от 5 апреля 2025</span>
+                                       </p>
+                                       <span class="order-card__status black">доставлен</span>
+                                       <ul class="order-card__details">
+                                          <li>
+                                             <span>Доставка:</span>Курьер Музрум <br>
+                                             г. Москва, Поклонная улица, 12к2, кв.76
+                                          </li>
+                                          <li>
+                                             <span>Способ оплаты:</span>Онлайн-оплата
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="order-card__right">
+                                       <p class="order-card__pricing">
+                                          <span>210 540 ₽</span><span>3 товара</span>
+                                       </p>
+                                       <ul class="order-card__products">
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <div class="order-card__footer">
+                                    <button class="btn white-on-orange">
+                                       <p>отменить заказ</p>
+                                       <p>
+                                          <span>отменить заказ</span>
+                                       </p>
+                                    </button>
+                                    <a href="#" class="order-card__link">
+                                       <span>Детали заказа</span>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none">
+                                          <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M18.9066 11.3737L13.0503 5.38637L13.9175 4.5L20.8204 11.5573C21.0599 11.8021 21.0599 12.199 20.8204 12.4437L13.9165 19.5L13.0494 18.6135L18.9063 12.6273H3V11.3737H18.9066Z"
+                                             fill="#182126" />
+                                       </svg>
+                                    </a>
+                                 </div>
+                              </li>
+                              <li class="order-card">
+                                 <div class="order-card__header">
+                                    <div class="order-card__left">
+                                       <p class="order-card__info">
+                                          <span>Заказ №250043</span>
+                                          <span>от 5 апреля 2025</span>
+                                       </p>
+                                       <span class="order-card__status grey">отменен</span>
+                                       <ul class="order-card__details">
+                                          <li>
+                                             <span>Доставка:</span>Курьер Музрум <br>
+                                             г. Москва, Поклонная улица, 12к2, кв.76
+                                          </li>
+                                          <li>
+                                             <span>Способ оплаты:</span>Онлайн-оплата
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="order-card__right">
+                                       <p class="order-card__pricing">
+                                          <span>210 540 ₽</span><span>3 товара</span>
+                                       </p>
+                                       <ul class="order-card__products">
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                          <li>
+                                             <img src="img/account-order.png" alt="">
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <div class="order-card__footer">
+                                    <button class="btn white-on-orange">
+                                       <p>отменить заказ</p>
+                                       <p>
+                                          <span>отменить заказ</span>
+                                       </p>
+                                    </button>
+                                    <a href="#" class="order-card__link">
+                                       <span> Детали заказа</span>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none">
+                                          <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M18.9066 11.3737L13.0503 5.38637L13.9175 4.5L20.8204 11.5573C21.0599 11.8021 21.0599 12.199 20.8204 12.4437L13.9165 19.5L13.0494 18.6135L18.9063 12.6273H3V11.3737H18.9066Z"
+                                             fill="#182126" />
+                                       </svg>
+                                    </a>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="orders-empty" style="display: none;">
+                           <div class="orders-empty__header">
+                              <p>
+                                 <span>В вашей корзине</span>
+                                 <span>2 товара</span>
+                              </p>
+                              <button class="btn orange">
+                                 <p>оформить заказ — 117 380 ₽</p>
+                                 <p>
+                                    <span>оформить заказ — 117 380 ₽</span>
+                                 </p>
+                              </button>
+                           </div>
+                           <div class="orders-empty__main">
+                              <ul class="cart-page__list">
+                                 <li class="cart-product">
+                                    <div class="cart-product__wrapper">
+                                       <div class="cart-product__image">
+                                          <div>
+                                             <img src="img/cart/product1.png" alt="">
+                                          </div>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58833 11.9462L6.86502 13.8991V4.36417H13.1402V13.8991L10.4169 11.9462L10.0512 11.763L10.0026 11.7387L9.95398 11.763L9.58833 11.9462ZM5.83594 15.6571V15.8333L5.99332 15.7546L10.0026 12.9131L14.0119 15.7546L14.1693 15.8333V15.6571V4.25523C14.1693 4.01073 14.0723 3.77624 13.8997 3.60335C13.7271 3.43046 13.4931 3.33333 13.2489 3.33333H6.75627C6.51218 3.33333 6.27809 3.43046 6.1055 3.60335C5.9329 3.77624 5.83594 4.01073 5.83594 4.25523V15.6571Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                       <div class="cart-product__main">
+
+                                          <p class="cart-product__name body-text">
+                                             Цифровое пианино Medeli SP201 BK
+                                          </p>
+                                          <div class="cart-product__color app-select " id="select0"></div>
+                                          <div class="cart-product__count">
+                                             <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   viewBox="0 0 16 16" fill="none">
+                                                   <path d="M2 8H14" stroke="#182126" stroke-width="1.1" />
+                                                </svg>
+                                             </button>
+                                             <span>1</span>
+                                             <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   viewBox="0 0 16 16" fill="none">
+                                                   <path d="M7.9386 2V8M7.9386 14V8M7.9386 8H2H14" stroke="#182126"
+                                                      stroke-width="1.1" />
+                                                </svg>
+                                             </button>
+                                          </div>
+                                          <p class="cart-product__price price-text">
+                                             <span style="text-decoration: line-through;">64 559 ₽</span><span
+                                                style="color: #FF8522;">58 690 ₽</span>
+                                          </p>
+                                          <button class="cart-product__remove">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                                <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                                   stroke-width="1.35714" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li class="cart-product">
+                                    <div class="cart-product__wrapper">
+                                       <div class="cart-product__image">
+                                          <div>
+                                             <img src="img/cart/product1.png" alt="">
+                                          </div>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58833 11.9462L6.86502 13.8991V4.36417H13.1402V13.8991L10.4169 11.9462L10.0512 11.763L10.0026 11.7387L9.95398 11.763L9.58833 11.9462ZM5.83594 15.6571V15.8333L5.99332 15.7546L10.0026 12.9131L14.0119 15.7546L14.1693 15.8333V15.6571V4.25523C14.1693 4.01073 14.0723 3.77624 13.8997 3.60335C13.7271 3.43046 13.4931 3.33333 13.2489 3.33333H6.75627C6.51218 3.33333 6.27809 3.43046 6.1055 3.60335C5.9329 3.77624 5.83594 4.01073 5.83594 4.25523V15.6571Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                       <div class="cart-product__main">
+
+                                          <p class="cart-product__name body-text">
+                                             Цифровое пианино Medeli SP201 BK
+                                          </p>
+                                          <div class="cart-product__color app-select " id="select1"></div>
+                                          <div class="cart-product__count">
+                                             <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   viewBox="0 0 16 16" fill="none">
+                                                   <path d="M2 8H14" stroke="#182126" stroke-width="1.1" />
+                                                </svg>
+                                             </button>
+                                             <span>1</span>
+                                             <button>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   viewBox="0 0 16 16" fill="none">
+                                                   <path d="M7.9386 2V8M7.9386 14V8M7.9386 8H2H14" stroke="#182126"
+                                                      stroke-width="1.1" />
+                                                </svg>
+                                             </button>
+                                          </div>
+                                          <p class="cart-product__price price-text">
+                                             <span style="text-decoration: line-through;">64 559 ₽</span><span
+                                                style="color: #FF8522;">58 690 ₽</span>
+                                          </p>
+                                          <button class="cart-product__remove">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                                <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                                   stroke-width="1.35714" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                    </div>
+
+                                 </li>
+
+                              </ul>
+                              <button class="btn orange">
+                                 <p>оформить заказ — 117 380 ₽</p>
+                                 <p>
+                                    <span>оформить заказ — 117 380 ₽</span>
+                                 </p>
+                              </button>
+                           </div>
+                        </div>
+                        <div class="orders-emptyfull" style="display: none;">
+                           <p class="body-text" style="color: #4D4D4D;">У вас еще нет заказов</p>
+                           <a href="#" class="btn">
+                              <p>перейти к покупкам</p>
+                              <p>
+                                 <span>перейти к покупкам</span>
+                              </p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+
+
+</body>
+
+</html>

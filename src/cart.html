@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Корзина</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="cart-page">
+            <div class="container">
+               <div class="cart-page__wrapper">
+                  <div class="cart-page__main">
+                     <div class="cart-page__header">
+                        <ul class="cart-page__tabs">
+                           <li>
+                              <label>
+                                 <input checked type="radio" name="cart-tabs" value="0">
+
+                                 <span class="h2">Покупка</span><sup>3</sup>
+
+                              </label>
+                           </li>
+                           <li>
+                              <label>
+                                 <input type="radio" name="cart-tabs" value="1">
+
+                                 <span class="h2">Аренда</span><sup>3</sup>
+
+                              </label>
+                           </li>
+                        </ul>
+                        <a href="#" class="cart-page__clear modal__link">
+                           <span>Очистить</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none">
+                              <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                              <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10059" stroke="#182126"
+                                 stroke-width="1.35714" />
+                           </svg>
+                        </a>
+                     </div>
+                     <div data-tab="0" class="active">
+                        <div class="cart-page__main">
+                           <ul class="cart-page__list">
+                              <li class="cart-product">
+                                 <div class="cart-product__wrapper">
+                                    <div class="cart-product__image">
+                                       <div>
+                                          <img src="img/cart/product1.png" alt="">
+                                       </div>
+                                       <button>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                             viewBox="0 0 20 20" fill="none">
+                                             <path
+                                                d="M9.58833 11.9462L6.86502 13.8991V4.36417H13.1402V13.8991L10.4169 11.9462L10.0512 11.763L10.0026 11.7387L9.95398 11.763L9.58833 11.9462ZM5.83594 15.6571V15.8333L5.99332 15.7546L10.0026 12.9131L14.0119 15.7546L14.1693 15.8333V15.6571V4.25523C14.1693 4.01073 14.0723 3.77624 13.8997 3.60335C13.7271 3.43046 13.4931 3.33333 13.2489 3.33333H6.75627C6.51218 3.33333 6.27809 3.43046 6.1055 3.60335C5.9329 3.77624 5.83594 4.01073 5.83594 4.25523V15.6571Z"
+                                                fill="#182126" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                    <div class="cart-product__main">
+
+                                       <p class="cart-product__name body-text">
+                                          Цифровое пианино Medeli SP201 BK
+                                       </p>
+                                       <div class="cart-product__color app-select " id="select0"></div>
+                                       <div class="cart-product__count">
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path d="M2 8H14" stroke="#182126" stroke-width="1.1" />
+                                             </svg>
+                                          </button>
+                                          <span>1</span>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path d="M7.9386 2V8M7.9386 14V8M7.9386 8H2H14" stroke="#182126"
+                                                   stroke-width="1.1" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                       <p class="cart-product__price price-text">
+                                          <span style="text-decoration: line-through;">64 559 ₽</span><span
+                                             style="color: #FF8522;">58 690 ₽</span>
+                                       </p>
+                                       <button class="cart-product__remove">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                             <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                             <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                                stroke-width="1.35714" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="cart-product">
+                                 <div class="cart-product__wrapper">
+                                    <div class="cart-product__image">
+                                       <div>
+                                          <img src="img/cart/product1.png" alt="">
+                                       </div>
+                                       <button>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                             viewBox="0 0 20 20" fill="none">
+                                             <path
+                                                d="M9.58833 11.9462L6.86502 13.8991V4.36417H13.1402V13.8991L10.4169 11.9462L10.0512 11.763L10.0026 11.7387L9.95398 11.763L9.58833 11.9462ZM5.83594 15.6571V15.8333L5.99332 15.7546L10.0026 12.9131L14.0119 15.7546L14.1693 15.8333V15.6571V4.25523C14.1693 4.01073 14.0723 3.77624 13.8997 3.60335C13.7271 3.43046 13.4931 3.33333 13.2489 3.33333H6.75627C6.51218 3.33333 6.27809 3.43046 6.1055 3.60335C5.9329 3.77624 5.83594 4.01073 5.83594 4.25523V15.6571Z"
+                                                fill="#182126" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                    <div class="cart-product__main">
+
+                                       <p class="cart-product__name body-text">
+                                          Цифровое пианино Medeli SP201 BK
+                                       </p>
+                                       <div class="cart-product__color app-select " id="select1"></div>
+                                       <div class="cart-product__count">
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path d="M2 8H14" stroke="#182126" stroke-width="1.1" />
+                                             </svg>
+                                          </button>
+                                          <span>1</span>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path d="M7.9386 2V8M7.9386 14V8M7.9386 8H2H14" stroke="#182126"
+                                                   stroke-width="1.1" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                       <p class="cart-product__price price-text">
+                                          <span style="text-decoration: line-through;">64 559 ₽</span><span
+                                             style="color: #FF8522;">58 690 ₽</span>
+                                       </p>
+                                       <button class="cart-product__remove">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                             <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                             <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                                stroke-width="1.35714" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                 </div>
+                                 <div class="cart-complect">
+                                    <div class="cart-complect__main">
+                                       <span class="cart-complect__title">В комплекте выгоднее</span>
+                                       <div class="cart-complect__nav">
+                                          <button class="prev">
+                                             <svg style="rotate: 180deg;" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                height="12" viewBox="0 0 12 12" fill="none">
+                                                <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                          <button class="next">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                    </div>
+                                    <div class="cart-complect__slider">
+                                       <div class="swiper">
+                                          <div class="swiper-wrapper">
+                                             <div class="swiper-slide">
+                                                <div class="cart-complect__list">
+                                                   <div class="cart-complect__product cart-complect__optional">
+                                                      <img src="img/product2.png" alt="">
+                                                      <p>
+                                                         <span>Цифровое пианино Medeli SP201 BK</span>
+                                                         <span class="caption-text">
+                                                            <span style="text-decoration: line-through;">64 559 ₽</span>
+                                                            <span style="color: #FF8522;margin-left: 12px;">58 690
+                                                               ₽</span>
+                                                         </span>
+                                                      </p>
+                                                   </div>
+                                                   <div class="cart-complect__optional cart-complect__plus">
+                                                      <img src="img/cart/optional.png" alt="">
+                                                      <p>
+                                                         <span>Стойка складная</span>
+                                                         <span class="caption-text">6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <div class="cart-complect__optional cart-complect__plus">
+                                                      <img src="img/cart/optional2.png" alt="">
+                                                      <p>
+                                                         <span>Педаль рояльного типа</span>
+                                                         <span class="caption-text">6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                                <div class="cart-complect__info">
+                                                   <p class="body-text">
+                                                      <span style="text-decoration: line-through;">158 000 ₽</span><span
+                                                         style="color: #FF8522;">58 690 ₽</span>
+                                                   </p>
+                                                   <button class="icon-btn">
+                                                      <span>Добавить комплектом</span>
+                                                   </button>
+                                                </div>
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <div class="cart-complect__list">
+                                                   <div class="cart-complect__product cart-complect__optional">
+                                                      <img src="img/product2.png" alt="">
+                                                      <p>
+                                                         <span>Цифровое пианино Medeli SP201 BK</span>
+                                                         <span class="caption-text">
+                                                            <span style="text-decoration: line-through;">64 559 ₽</span>
+                                                            <span style="color: #FF8522;margin-left: 12px;">58 690
+                                                               ₽</span>
+                                                         </span>
+                                                      </p>
+                                                   </div>
+                                                   <div class="cart-complect__optional cart-complect__plus">
+                                                      <img src="img/cart/optional.png" alt="">
+                                                      <p>
+                                                         <span>Стойка складная</span>
+                                                         <span class="caption-text">6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <div class="cart-complect__optional cart-complect__plus">
+                                                      <img src="img/cart/optional2.png" alt="">
+                                                      <p>
+                                                         <span>Педаль рояльного типа</span>
+                                                         <span class="caption-text">6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                                <div class="cart-complect__info">
+                                                   <p class="body-text">
+                                                      <span style="text-decoration: line-through;">158 000 ₽</span><span
+                                                         style="color: #FF8522;">58 690 ₽</span>
+                                                   </p>
+                                                   <button class="icon-btn">
+                                                      <span>Добавить комплектом</span>
+                                                   </button>
+                                                </div>
+                                             </div>
+
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="cart-product">
+                                 <div class="cart-product__wrapper">
+                                    <div class="cart-product__image">
+                                       <div>
+                                          <img src="img/cart/product1.png" alt="">
+                                       </div>
+                                       <button>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                             viewBox="0 0 20 20" fill="none">
+                                             <path
+                                                d="M9.58833 11.9462L6.86502 13.8991V4.36417H13.1402V13.8991L10.4169 11.9462L10.0512 11.763L10.0026 11.7387L9.95398 11.763L9.58833 11.9462ZM5.83594 15.6571V15.8333L5.99332 15.7546L10.0026 12.9131L14.0119 15.7546L14.1693 15.8333V15.6571V4.25523C14.1693 4.01073 14.0723 3.77624 13.8997 3.60335C13.7271 3.43046 13.4931 3.33333 13.2489 3.33333H6.75627C6.51218 3.33333 6.27809 3.43046 6.1055 3.60335C5.9329 3.77624 5.83594 4.01073 5.83594 4.25523V15.6571Z"
+                                                fill="#182126" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                    <div class="cart-product__main">
+
+                                       <p class="cart-product__name body-text">
+                                          Цифровое пианино Medeli SP201 BK
+                                       </p>
+                                       <div class="cart-product__color app-select " id="select2"></div>
+                                       <div class="cart-product__count">
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path d="M2 8H14" stroke="#182126" stroke-width="1.1" />
+                                             </svg>
+                                          </button>
+                                          <span>1</span>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path d="M7.9386 2V8M7.9386 14V8M7.9386 8H2H14" stroke="#182126"
+                                                   stroke-width="1.1" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                       <p class="cart-product__price price-text">
+                                          <span style="text-decoration: line-through;">64 559 ₽</span><span
+                                             style="color: #FF8522;">58 690 ₽</span>
+                                       </p>
+                                       <button class="cart-product__remove">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none">
+                                             <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                             <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                                stroke-width="1.35714" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                 </div>
+                                 <div class="cart-complect cart-with">
+                                    <div class="cart-complect__main cart-with__main">
+                                       <span class="cart-complect__title">С этим товаром покупают</span>
+                                       <div class="cart-complect__nav">
+                                          <button class="prev">
+                                             <svg style="rotate: 180deg;" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                height="12" viewBox="0 0 12 12" fill="none">
+                                                <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                          <button class="next">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </div>
+                                    </div>
+                                    <div class="cart-with__slider">
+                                       <div class="swiper">
+                                          <div class="swiper-wrapper">
+                                             <div class="swiper-slide">
+                                                <div>
+                                                   <div class="cart-with__product">
+                                                      <img src="img/cart/with1.png" alt="">
+                                                      <p class="caption-text">
+                                                         <span>Наушники COMFORT</span>
+                                                         <span>9 800 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <button class="cart-with__add icon-btn">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                         viewBox="0 0 11 10" fill="none">
+                                                         <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                            fill="white" />
+                                                      </svg>
+                                                   </button>
+                                                </div>
+                                                <div>
+                                                   <div class="cart-with__product">
+                                                      <img src="img/cart/with2.png" alt="">
+                                                      <p class="caption-text">
+                                                         <span>Педаль рояльного типа</span>
+                                                         <span>6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <button class="cart-with__add icon-btn">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                         viewBox="0 0 11 10" fill="none">
+                                                         <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                            fill="white" />
+                                                      </svg>
+                                                   </button>
+                                                </div>
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <div>
+                                                   <div class="cart-with__product">
+                                                      <img src="img/cart/with1.png" alt="">
+                                                      <p class="caption-text">
+                                                         <span>Наушники COMFORT</span>
+                                                         <span>9 800 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <button class="cart-with__add icon-btn">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                         viewBox="0 0 11 10" fill="none">
+                                                         <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                            fill="white" />
+                                                      </svg>
+                                                   </button>
+                                                </div>
+                                                <div>
+                                                   <div class="cart-with__product">
+                                                      <img src="img/cart/with2.png" alt="">
+                                                      <p class="caption-text">
+                                                         <span>Педаль рояльного типа</span>
+                                                         <span>6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <button class="cart-with__add icon-btn">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                         viewBox="0 0 11 10" fill="none">
+                                                         <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                            fill="white" />
+                                                      </svg>
+                                                   </button>
+                                                </div>
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <div>
+                                                   <div class="cart-with__product">
+                                                      <img src="img/cart/with1.png" alt="">
+                                                      <p class="caption-text">
+                                                         <span>Наушники COMFORT</span>
+                                                         <span>9 800 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <button class="cart-with__add icon-btn">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                         viewBox="0 0 11 10" fill="none">
+                                                         <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                            fill="white" />
+                                                      </svg>
+                                                   </button>
+                                                </div>
+                                                <div>
+                                                   <div class="cart-with__product">
+                                                      <img src="img/cart/with2.png" alt="">
+                                                      <p class="caption-text">
+                                                         <span>Педаль рояльного типа</span>
+                                                         <span>6 200 ₽</span>
+                                                      </p>
+                                                   </div>
+                                                   <button class="cart-with__add icon-btn">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                         viewBox="0 0 11 10" fill="none">
+                                                         <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                            fill="white" />
+                                                      </svg>
+                                                   </button>
+                                                </div>
+                                             </div>
+
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                           <div class="cart-empty" style="display: none;">
+                              <p class="body-text">
+                                 В корзине пока ничего нет, но это можно легко исправить!
+                              </p>
+
+                              <a href="#" class="btn orange">
+                                 <p>в каталог</p>
+                                 <p>
+                                    <span>в каталог</span>
+                                 </p>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div data-tab="1">
+                        <ul class="cart-page__list">
+                           <li class="cart-product instal-product">
+                              <div class="cart-product__wrapper">
+                                 <div class="cart-product__image">
+                                    <div>
+                                       <img src="img/cart/product1.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="cart-product__main">
+
+                                    <p class="cart-product__name body-text">
+                                       <span>Аренда цифрового пианино Orla CDP-1</span>
+                                       <span class="caption-text" style="display: block;margin-top: 4px;">
+                                          9 100 ₽/мес.
+                                       </span>
+                                    </p>
+                                    <div class="cart-product__dates">
+                                       <div class="app-input"><input type="text" data-date value="07.03.2025"></div>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20"
+                                          viewBox="0 0 19 20" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M16.3115 9.87238L13.4115 6.88637L14.3182 6L18.3123 10.056C18.5626 10.3008 18.5626 10.6977 18.3122 10.9424L14.3182 15L13.4117 14.1135L16.3112 11.126L0.749999 11.126L0.75 9.87238H16.3115Z"
+                                             fill="#182126" />
+                                       </svg>
+                                       <div class="app-input"><input type="text" data-date value="07.03.2025"></div>
+                                    </div>
+                                    <p class="cart-product__price price-text">
+                                       <span>9 100 ₽</span>
+                                    </p>
+                                    <button class="cart-product__remove">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none">
+                                          <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                          <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                             stroke-width="1.35714" />
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="cart-complect">
+                                 <div class="cart-complect__main">
+                                    <span class="cart-complect__title">В комплекте выгоднее</span>
+                                    <div class="cart-complect__nav">
+                                       <button class="prev">
+                                          <svg style="rotate: 180deg;" xmlns="http://www.w3.org/2000/svg" width="12"
+                                             height="12" viewBox="0 0 12 12" fill="none">
+                                             <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                          </svg>
+                                       </button>
+                                       <button class="next">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                             viewBox="0 0 12 12" fill="none">
+                                             <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                 </div>
+                                 <div class="cart-complect__slider">
+                                    <div class="swiper">
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             <div class="cart-complect__list">
+                                                <div class="cart-complect__product cart-complect__optional">
+                                                   <img src="img/product2.png" alt="">
+                                                   <p>
+                                                      <span>Цифровое пианино Medeli SP201 BK</span>
+                                                      <span class="caption-text">
+                                                         <span style="text-decoration: line-through;">64 559 ₽</span>
+                                                         <span style="color: #FF8522;margin-left: 12px;">58 690
+                                                            ₽</span>
+                                                      </span>
+                                                   </p>
+                                                </div>
+                                                <div class="cart-complect__optional cart-complect__plus">
+                                                   <img src="img/cart/optional.png" alt="">
+                                                   <p>
+                                                      <span>Стойка складная</span>
+                                                      <span class="caption-text">6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <div class="cart-complect__optional cart-complect__plus">
+                                                   <img src="img/cart/optional2.png" alt="">
+                                                   <p>
+                                                      <span>Педаль рояльного типа</span>
+                                                      <span class="caption-text">6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                             </div>
+                                             <div class="cart-complect__info">
+                                                <p class="body-text">
+                                                   <span style="text-decoration: line-through;">158 000 ₽</span><span
+                                                      style="color: #FF8522;">58 690 ₽</span>
+                                                </p>
+                                                <button class="icon-btn">
+                                                   <span>Добавить комплектом</span>
+                                                </button>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div class="cart-complect__list">
+                                                <div class="cart-complect__product cart-complect__optional">
+                                                   <img src="img/product2.png" alt="">
+                                                   <p>
+                                                      <span>Цифровое пианино Medeli SP201 BK</span>
+                                                      <span class="caption-text">
+                                                         <span style="text-decoration: line-through;">64 559 ₽</span>
+                                                         <span style="color: #FF8522;margin-left: 12px;">58 690
+                                                            ₽</span>
+                                                      </span>
+                                                   </p>
+                                                </div>
+                                                <div class="cart-complect__optional cart-complect__plus">
+                                                   <img src="img/cart/optional.png" alt="">
+                                                   <p>
+                                                      <span>Стойка складная</span>
+                                                      <span class="caption-text">6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <div class="cart-complect__optional cart-complect__plus">
+                                                   <img src="img/cart/optional2.png" alt="">
+                                                   <p>
+                                                      <span>Педаль рояльного типа</span>
+                                                      <span class="caption-text">6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                             </div>
+                                             <div class="cart-complect__info">
+                                                <p class="body-text">
+                                                   <span style="text-decoration: line-through;">158 000 ₽</span><span
+                                                      style="color: #FF8522;">58 690 ₽</span>
+                                                </p>
+                                                <button class="icon-btn">
+                                                   <span>Добавить комплектом</span>
+                                                </button>
+                                             </div>
+                                          </div>
+
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="cart-product instal-product">
+                              <div class="cart-product__wrapper">
+                                 <div class="cart-product__image">
+                                    <div>
+                                       <img src="img/cart/product1.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="cart-product__main">
+
+                                    <p class="cart-product__name body-text">
+                                       <span>Аренда цифрового пианино Orla CDP-1</span>
+                                       <span class="caption-text"
+                                          style="display: block;margin-top: 4px;white-space: nowrap;">
+                                          <span style="text-decoration: line-through;">9 100 ₽/мес.</span>
+                                          <span style="color: #FF8522;margin-left: 12px;">8 100 ₽/мес.</span>
+                                       </span>
+                                    </p>
+                                    <div class="cart-product__dates">
+                                       <div class="app-input"><input type="text" data-date value="07.03.2025"></div>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20"
+                                          viewBox="0 0 19 20" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M16.3115 9.87238L13.4115 6.88637L14.3182 6L18.3123 10.056C18.5626 10.3008 18.5626 10.6977 18.3122 10.9424L14.3182 15L13.4117 14.1135L16.3112 11.126L0.749999 11.126L0.75 9.87238H16.3115Z"
+                                             fill="#182126" />
+                                       </svg>
+                                       <div class="app-input"><input type="text" data-date value="07.03.2025"></div>
+                                    </div>
+                                    <p class="cart-product__price price-text">
+                                       <span>9 100 ₽</span>
+                                    </p>
+                                    <button class="cart-product__remove">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none">
+                                          <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                          <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                             stroke-width="1.35714" />
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="cart-product instal-product">
+                              <div class="cart-product__wrapper">
+                                 <div class="cart-product__image">
+                                    <div>
+                                       <img src="img/cart/product1.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="cart-product__main">
+
+                                    <p class="cart-product__name body-text">
+                                       <span>Аренда цифрового пианино Orla CDP-1</span>
+                                       <span class="caption-text"
+                                          style="display: block;margin-top: 4px;white-space: nowrap;">
+                                          <span style="text-decoration: line-through;">9 100 ₽/мес.</span>
+                                          <span style="color: #FF8522;margin-left: 12px;">6 700 ₽/мес.</span>
+                                       </span>
+                                    </p>
+                                    <div class="cart-product__dates">
+                                       <div class="app-input"><input type="text" data-date value="07.03.2025"></div>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20"
+                                          viewBox="0 0 19 20" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M16.3115 9.87238L13.4115 6.88637L14.3182 6L18.3123 10.056C18.5626 10.3008 18.5626 10.6977 18.3122 10.9424L14.3182 15L13.4117 14.1135L16.3112 11.126L0.749999 11.126L0.75 9.87238H16.3115Z"
+                                             fill="#182126" />
+                                       </svg>
+                                       <div class="app-input"><input type="text" data-date value="07.03.2025"></div>
+                                    </div>
+                                    <p class="cart-product__price price-text">
+                                       <span>9 100 ₽</span>
+                                    </p>
+                                    <button class="cart-product__remove">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                          viewBox="0 0 24 24" fill="none">
+                                          <rect width="24" height="24" rx="4" fill="#F2F2F2" />
+                                          <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10058" stroke="#182126"
+                                             stroke-width="1.35714" />
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="cart-complect cart-with">
+                                 <div class="cart-complect__main cart-with__main">
+                                    <span class="cart-complect__title">Добавить аксессуары</span>
+                                    <div class="cart-complect__nav">
+                                       <button class="prev">
+                                          <svg style="rotate: 180deg;" xmlns="http://www.w3.org/2000/svg" width="12"
+                                             height="12" viewBox="0 0 12 12" fill="none">
+                                             <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                          </svg>
+                                       </button>
+                                       <button class="next">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                             viewBox="0 0 12 12" fill="none">
+                                             <path d="M3.75 2L8.25 6.5L3.75 10.5" stroke="#182126" />
+                                          </svg>
+                                       </button>
+                                    </div>
+                                 </div>
+                                 <div class="cart-with__slider">
+                                    <div class="swiper">
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             <div>
+                                                <div class="cart-with__product">
+                                                   <img src="img/cart/with1.png" alt="">
+                                                   <p class="caption-text">
+                                                      <span>Наушники COMFORT</span>
+                                                      <span>9 800 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <button class="cart-with__add icon-btn">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                      viewBox="0 0 11 10" fill="none">
+                                                      <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                         fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div>
+                                                <div class="cart-with__product">
+                                                   <img src="img/cart/with2.png" alt="">
+                                                   <p class="caption-text">
+                                                      <span>Педаль рояльного типа</span>
+                                                      <span>6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <button class="cart-with__add icon-btn">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                      viewBox="0 0 11 10" fill="none">
+                                                      <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                         fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div>
+                                                <div class="cart-with__product">
+                                                   <img src="img/cart/with1.png" alt="">
+                                                   <p class="caption-text">
+                                                      <span>Наушники COMFORT</span>
+                                                      <span>9 800 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <button class="cart-with__add icon-btn">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                      viewBox="0 0 11 10" fill="none">
+                                                      <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                         fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div>
+                                                <div class="cart-with__product">
+                                                   <img src="img/cart/with2.png" alt="">
+                                                   <p class="caption-text">
+                                                      <span>Педаль рояльного типа</span>
+                                                      <span>6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <button class="cart-with__add icon-btn">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                      viewBox="0 0 11 10" fill="none">
+                                                      <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                         fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-slide">
+                                             <div>
+                                                <div class="cart-with__product">
+                                                   <img src="img/cart/with1.png" alt="">
+                                                   <p class="caption-text">
+                                                      <span>Наушники COMFORT</span>
+                                                      <span>9 800 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <button class="cart-with__add icon-btn">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                      viewBox="0 0 11 10" fill="none">
+                                                      <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                         fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div>
+                                                <div class="cart-with__product">
+                                                   <img src="img/cart/with2.png" alt="">
+                                                   <p class="caption-text">
+                                                      <span>Педаль рояльного типа</span>
+                                                      <span>6 200 ₽</span>
+                                                   </p>
+                                                </div>
+                                                <button class="cart-with__add icon-btn">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+                                                      viewBox="0 0 11 10" fill="none">
+                                                      <path d="M5 5.5V10H6V5.5H10.5V4.5H6V0H5V4.5H0.5V5.5H5Z"
+                                                         fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                          </div>
+
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+                        <div class="cart-page__main">
+                           <div class="cart-empty" style="display: none;">
+                              <p class="body-text">
+                                 В корзине аренды пока ничего нет, но это можно легко исправить!
+                              </p>
+
+                              <a href="#" class="btn orange">
+                                 <p>в каталог аренды</p>
+                                 <p>
+                                    <span>в каталог аренды</span>
+                                 </p>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <aside class="cart-page__side cart-aside">
+                     <ul class="cart-aside__list">
+                        <li>
+                           <span>Товары: 3 шт.</span>
+                           <span>173 700 ₽</span>
+                        </li>
+                        <li>
+                           <span>Скидка</span>
+                           <span style="color: #FF8522;"> 6 300 ₽</span>
+                        </li>
+                     </ul>
+                     <div class="cart-aside__promo">
+                        <div class="loader"></div>
+                        <div class="app-input">
+                           <input type="text" placeholder="Введите промокод">
+                           <ul>
+
+                              <li>
+                                 <button class="cart-aside__clear">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path d="M7 8L16 16.9095M7 17L16 8.09045" stroke="#182126"
+                                          stroke-width="1.35714" />
+                                    </svg>
+                                 </button>
+                              </li>
+                              <li>
+                                 <button class="cart-aside__next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M14.1091 12.2366L9 7.75948L9.97165 7L16 12.2826L9.94382 17L9.02783 16.1945L14.1091 12.2366Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </li>
+                           </ul>
+
+                        </div>
+                     </div>
+                     <ul class="cart-aside__btns">
+                        <li>
+                           <button class="btn orange">
+                              <p>оформить заказ — 167 400 ₽</p>
+                              <p>
+                                 <span>оформить заказ — 167 400 ₽</span>
+                              </p>
+                           </button>
+                        </li>
+                        <li>
+                           <button class="btn transparent">
+                              <p>В рассрочку</p>
+                              <p>
+                                 <span>В рассрочку</span>
+                              </p>
+                           </button>
+                        </li>
+                     </ul>
+                  </aside>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+
+   <script>
+      const products = document.querySelectorAll('.cart-product')
+      products.forEach((element, index) => {
+
+         let select = new Select(`#select${index}`, {
+            placeholder: "Цвет",
+            selectedId: "black",
+            multi: false,
+            data: [
+               {
+                  id: "black",
+                  value: "Чёрный",
+               },
+               {
+                  id: "white",
+                  value: "Белый",
+               },
+            ],
+            onSelect(item, select) {
+               if (select.querySelectorAll(".selected").length) {
+                  select.classList.add("");
+               }
+            },
+         })
+      });
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+<style>
+   .header.white {
+      background-color: #F2F2F2;
+   }
+
+   .footer {
+      margin-top: var(--sectionMargin);
+   }
+</style>
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #F2F2F2; overflow: hidden;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Сравнение</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="catalog-hero compare-hero">
+            <div class="container">
+               <div class="catalog-hero__wrapper">
+                  <div class="catalog-hero__main">
+                     <div class="favorites-header">
+                        <h1 class="catalog-hero__title favorites-title">
+                           <span class="h2">Сравнение</span>
+                           <sup>6</sup>
+                        </h1>
+                        <ul class="favorites-header__btns">
+                           <button class="favorites-header__share">
+                              <span>Очистить все списки</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none">
+                                 <rect width="24" height="24" rx="4" fill="black" fill-opacity="0.05" />
+                                 <path d="M7 7L17 16.8995M7 17L17 7.10051" stroke="#182126" stroke-width="1.35714" />
+                              </svg>
+                           </button>
+                           <button class="favorites-header__remove">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                 fill="none">
+                                 <path d="M11 11L21 21M11 21L21 11" stroke="#182126" />
+                              </svg>
+                           </button>
+                        </ul>
+                     </div>
+
+                  </div>
+                  <div class="catalog-hero__filters catalog-filters">
+                     <div class="catalog-filters__upper">
+                        <div class="catalog-filters__left">
+                           <ul class="favorites-filters">
+                              <li>
+                                 <label>
+                                    <input checked name="favor-filters" type="radio" value="0">
+                                    <span>клавишные</span>
+                                    <span>5</span>
+                                    <a href="#removeCat" class="modal__link">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path d="M3 3L13 13M3 13L13 3" stroke="#182126" />
+                                       </svg>
+                                    </a>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input name="favor-filters" type="radio" value="0">
+                                    <span>звук</span>
+                                    <span>1</span>
+                                    <a href="#removeCat" class="modal__link">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path d="M3 3L13 13M3 13L13 3" stroke="#182126" />
+                                       </svg>
+                                    </a>
+                                 </label>
+                              </li>
+                           </ul>
+                           <div class="favorites-select appeal-new__select app-select" id="favorites-select"></div>
+                        </div>
+                        <div class="catalog-filters__right" style="gap: 8px;">
+                           <button class="btn white-on-dark" style="
+border: 1px solid var(--black-15, rgba(0, 0, 0, 0.15));">
+                              <p>показать различия</p>
+                              <p>
+                                 <span>показать различия</span>
+                              </p>
+                           </button>
+                           <button class="btn transparent" style="border: 0">
+                              <p>показать аналоги</p>
+                              <p>
+                                 <span>показать аналоги</span>
+                              </p>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="compare-page">
+            <div class="container">
+               <div class="compare-page__wrapper">
+                  <div class="compare-page__products">
+                     <div class="swiper">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare.png" alt="">
+                                 </div>
+                                 <div class="compare-product__main">
+                                    <div class="compare-product__info">
+                                       <span class="compare-product__name">Цифровое пианино Medeli SP201 BK</span>
+                                       <span class="price-text">58 690 ₽</span>
+                                    </div>
+                                    <ul class="compare-product__actions">
+                                       <li>
+                                          <button class="btn orange">
+                                             <p>В корзину</p>
+                                             <p>
+                                                <span>В корзину</span>
+                                             </p>
+                                          </button>
+                                          <button class="icon-btn">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                   d="M7.70736 7.15556V4.4697H12.2958V7.15556H7.70736ZM6.72033 7.15556V4.40601C6.72033 3.90185 7.13342 3.49316 7.64299 3.49316H12.3601C12.8697 3.49316 13.2829 3.90185 13.2829 4.40601V7.15556H16.5044H17.5L17.3703 8.1321L16.3461 15.8461H3.65384L2.62965 8.1321L2.5 7.15556H3.49551H6.72033ZM4.5197 14.8695L3.62516 8.1321H16.3748L15.4802 14.8695H4.5197Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58442 11.9459L6.86111 13.8988V4.36384H13.1363V13.8988L10.413 11.9459L10.0473 11.7627L9.9987 11.7384L9.95007 11.7627L9.58442 11.9459ZM5.83203 15.6568V15.833L5.98941 15.7542L9.9987 12.9128L14.008 15.7542L14.1654 15.833V15.6568V4.25491C14.1654 4.01041 14.0684 3.77592 13.8958 3.60303C13.7232 3.43014 13.4892 3.33301 13.245 3.33301H6.75236C6.50828 3.33301 6.27418 3.43014 6.10159 3.60303C5.92899 3.77592 5.83203 4.01041 5.83203 4.25491V15.6568Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path d="M4.41797 6.00098H5.58464V10.1676H4.41797V6.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M9.50129 4.00098H10.668V16.501H9.50129V4.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M14.0013 9.00098H15.1679V16.501H14.0013V9.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M3 13.8952L5 16L8 12" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare.png" alt="">
+                                 </div>
+                                 <div class="compare-product__main">
+                                    <div class="compare-product__info">
+                                       <span class="compare-product__name">Цифровое пианино Medeli SP201 BK</span>
+                                       <span class="price-text">58 690 ₽</span>
+                                    </div>
+                                    <ul class="compare-product__actions">
+                                       <li>
+                                          <button class="btn orange">
+                                             <p>В корзину</p>
+                                             <p>
+                                                <span>В корзину</span>
+                                             </p>
+                                          </button>
+                                          <button class="icon-btn">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                   d="M7.70736 7.15556V4.4697H12.2958V7.15556H7.70736ZM6.72033 7.15556V4.40601C6.72033 3.90185 7.13342 3.49316 7.64299 3.49316H12.3601C12.8697 3.49316 13.2829 3.90185 13.2829 4.40601V7.15556H16.5044H17.5L17.3703 8.1321L16.3461 15.8461H3.65384L2.62965 8.1321L2.5 7.15556H3.49551H6.72033ZM4.5197 14.8695L3.62516 8.1321H16.3748L15.4802 14.8695H4.5197Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58442 11.9459L6.86111 13.8988V4.36384H13.1363V13.8988L10.413 11.9459L10.0473 11.7627L9.9987 11.7384L9.95007 11.7627L9.58442 11.9459ZM5.83203 15.6568V15.833L5.98941 15.7542L9.9987 12.9128L14.008 15.7542L14.1654 15.833V15.6568V4.25491C14.1654 4.01041 14.0684 3.77592 13.8958 3.60303C13.7232 3.43014 13.4892 3.33301 13.245 3.33301H6.75236C6.50828 3.33301 6.27418 3.43014 6.10159 3.60303C5.92899 3.77592 5.83203 4.01041 5.83203 4.25491V15.6568Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path d="M4.41797 6.00098H5.58464V10.1676H4.41797V6.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M9.50129 4.00098H10.668V16.501H9.50129V4.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M14.0013 9.00098H15.1679V16.501H14.0013V9.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M3 13.8952L5 16L8 12" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare.png" alt="">
+                                 </div>
+                                 <div class="compare-product__main">
+                                    <div class="compare-product__info">
+                                       <span class="compare-product__name">Цифровое пианино Medeli SP201 BK</span>
+                                       <span class="price-text">58 690 ₽</span>
+                                    </div>
+                                    <ul class="compare-product__actions">
+                                       <li>
+                                          <button class="btn orange">
+                                             <p>В корзину</p>
+                                             <p>
+                                                <span>В корзину</span>
+                                             </p>
+                                          </button>
+                                          <button class="icon-btn">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                   d="M7.70736 7.15556V4.4697H12.2958V7.15556H7.70736ZM6.72033 7.15556V4.40601C6.72033 3.90185 7.13342 3.49316 7.64299 3.49316H12.3601C12.8697 3.49316 13.2829 3.90185 13.2829 4.40601V7.15556H16.5044H17.5L17.3703 8.1321L16.3461 15.8461H3.65384L2.62965 8.1321L2.5 7.15556H3.49551H6.72033ZM4.5197 14.8695L3.62516 8.1321H16.3748L15.4802 14.8695H4.5197Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58442 11.9459L6.86111 13.8988V4.36384H13.1363V13.8988L10.413 11.9459L10.0473 11.7627L9.9987 11.7384L9.95007 11.7627L9.58442 11.9459ZM5.83203 15.6568V15.833L5.98941 15.7542L9.9987 12.9128L14.008 15.7542L14.1654 15.833V15.6568V4.25491C14.1654 4.01041 14.0684 3.77592 13.8958 3.60303C13.7232 3.43014 13.4892 3.33301 13.245 3.33301H6.75236C6.50828 3.33301 6.27418 3.43014 6.10159 3.60303C5.92899 3.77592 5.83203 4.01041 5.83203 4.25491V15.6568Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path d="M4.41797 6.00098H5.58464V10.1676H4.41797V6.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M9.50129 4.00098H10.668V16.501H9.50129V4.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M14.0013 9.00098H15.1679V16.501H14.0013V9.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M3 13.8952L5 16L8 12" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare.png" alt="">
+                                 </div>
+                                 <div class="compare-product__main">
+                                    <div class="compare-product__info">
+                                       <span class="compare-product__name">Цифровое пианино Medeli SP201 BK</span>
+                                       <span class="price-text">58 690 ₽</span>
+                                    </div>
+                                    <ul class="compare-product__actions">
+                                       <li>
+                                          <button class="btn orange">
+                                             <p>В корзину</p>
+                                             <p>
+                                                <span>В корзину</span>
+                                             </p>
+                                          </button>
+                                          <button class="icon-btn">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                   d="M7.70736 7.15556V4.4697H12.2958V7.15556H7.70736ZM6.72033 7.15556V4.40601C6.72033 3.90185 7.13342 3.49316 7.64299 3.49316H12.3601C12.8697 3.49316 13.2829 3.90185 13.2829 4.40601V7.15556H16.5044H17.5L17.3703 8.1321L16.3461 15.8461H3.65384L2.62965 8.1321L2.5 7.15556H3.49551H6.72033ZM4.5197 14.8695L3.62516 8.1321H16.3748L15.4802 14.8695H4.5197Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58442 11.9459L6.86111 13.8988V4.36384H13.1363V13.8988L10.413 11.9459L10.0473 11.7627L9.9987 11.7384L9.95007 11.7627L9.58442 11.9459ZM5.83203 15.6568V15.833L5.98941 15.7542L9.9987 12.9128L14.008 15.7542L14.1654 15.833V15.6568V4.25491C14.1654 4.01041 14.0684 3.77592 13.8958 3.60303C13.7232 3.43014 13.4892 3.33301 13.245 3.33301H6.75236C6.50828 3.33301 6.27418 3.43014 6.10159 3.60303C5.92899 3.77592 5.83203 4.01041 5.83203 4.25491V15.6568Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path d="M4.41797 6.00098H5.58464V10.1676H4.41797V6.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M9.50129 4.00098H10.668V16.501H9.50129V4.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M14.0013 9.00098H15.1679V16.501H14.0013V9.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M3 13.8952L5 16L8 12" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare.png" alt="">
+                                 </div>
+                                 <div class="compare-product__main">
+                                    <div class="compare-product__info">
+                                       <span class="compare-product__name">Цифровое пианино Medeli SP201 BK</span>
+                                       <span class="price-text">58 690 ₽</span>
+                                    </div>
+                                    <ul class="compare-product__actions">
+                                       <li>
+                                          <button class="btn orange">
+                                             <p>В корзину</p>
+                                             <p>
+                                                <span>В корзину</span>
+                                             </p>
+                                          </button>
+                                          <button class="icon-btn">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                   d="M7.70736 7.15556V4.4697H12.2958V7.15556H7.70736ZM6.72033 7.15556V4.40601C6.72033 3.90185 7.13342 3.49316 7.64299 3.49316H12.3601C12.8697 3.49316 13.2829 3.90185 13.2829 4.40601V7.15556H16.5044H17.5L17.3703 8.1321L16.3461 15.8461H3.65384L2.62965 8.1321L2.5 7.15556H3.49551H6.72033ZM4.5197 14.8695L3.62516 8.1321H16.3748L15.4802 14.8695H4.5197Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                   d="M9.58442 11.9459L6.86111 13.8988V4.36384H13.1363V13.8988L10.413 11.9459L10.0473 11.7627L9.9987 11.7384L9.95007 11.7627L9.58442 11.9459ZM5.83203 15.6568V15.833L5.98941 15.7542L9.9987 12.9128L14.008 15.7542L14.1654 15.833V15.6568V4.25491C14.1654 4.01041 14.0684 3.77592 13.8958 3.60303C13.7232 3.43014 13.4892 3.33301 13.245 3.33301H6.75236C6.50828 3.33301 6.27418 3.43014 6.10159 3.60303C5.92899 3.77592 5.83203 4.01041 5.83203 4.25491V15.6568Z"
+                                                   fill="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                       <li>
+                                          <button>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path d="M4.41797 6.00098H5.58464V10.1676H4.41797V6.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M9.50129 4.00098H10.668V16.501H9.50129V4.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M14.0013 9.00098H15.1679V16.501H14.0013V9.00098Z"
+                                                   fill="#182126" />
+                                                <path d="M3 13.8952L5 16L8 12" stroke="#182126" />
+                                             </svg>
+                                          </button>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="compare-page__content">
+                     <div class="compare-page__section">
+                        <div class="compare-page__header active">
+                           <span class="txt-13">
+                              Технические
+                           </span>
+                           <button>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                 fill="none">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.84866 7.88965C2.70665 7.74267 2.49902 7.50005 2.10547 7.02967L5.99895 3.00005L9.89244 7.02967C9.75043 7.17664 9.49902 7.5 9.14835 7.88965L5.99864 4.62994L2.84866 7.88965Z"
+                                    fill="#FF8522" />
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="compare-page__collapse collapse_show">
+                           <div class="compare-page__main">
+                              <div class="compare-page__chars">
+                                 <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Количество клавиш</span>
+                                                <span>88</span>
+                                             </li>
+                                             <li>
+                                                <span>Тип клавиатуры</span>
+                                                <span>молоточковая</span>
+                                             </li>
+                                             <li>
+                                                <span>Полифония</span>
+                                                <span>256 голосов</span>
+                                             </li>
+                                             <li>
+                                                <span>Мощность</span>
+                                                <span>40 вт</span>
+                                             </li>
+                                             <li>
+                                                <span>Тон-генератор</span>
+                                                <span>ROS V.6 Plus</span>
+                                             </li>
+                                             <li>
+                                                <span>Автоаккомпанемент</span>
+                                                <span>40 стилей</span>
+                                             </li>
+                                             <li>
+                                                <span>Дисплей</span>
+                                                <span>Графический LCD 128x64 точек</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Количество клавиш</span>
+                                                <span>88</span>
+                                             </li>
+                                             <li>
+                                                <span>Тип клавиатуры</span>
+                                                <span>молоточковая</span>
+                                             </li>
+                                             <li>
+                                                <span>Полифония</span>
+                                                <span>256 голосов</span>
+                                             </li>
+                                             <li>
+                                                <span>Мощность</span>
+                                                <span>40 вт</span>
+                                             </li>
+                                             <li>
+                                                <span>Тон-генератор</span>
+                                                <span>ROS V.6 Plus</span>
+                                             </li>
+                                             <li>
+                                                <span>Автоаккомпанемент</span>
+                                                <span>40 стилей</span>
+                                             </li>
+                                             <li>
+                                                <span>Дисплей</span>
+                                                <span>Графический LCD 128x64 точек</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Количество клавиш</span>
+                                                <span>88</span>
+                                             </li>
+                                             <li>
+                                                <span>Тип клавиатуры</span>
+                                                <span>молоточковая</span>
+                                             </li>
+                                             <li>
+                                                <span>Полифония</span>
+                                                <span>256 голосов</span>
+                                             </li>
+                                             <li>
+                                                <span>Мощность</span>
+                                                <span>40 вт</span>
+                                             </li>
+                                             <li>
+                                                <span>Тон-генератор</span>
+                                                <span>ROS V.6 Plus</span>
+                                             </li>
+                                             <li>
+                                                <span>Автоаккомпанемент</span>
+                                                <span>40 стилей</span>
+                                             </li>
+                                             <li>
+                                                <span>Дисплей</span>
+                                                <span>Графический LCD 128x64 точек</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Количество клавиш</span>
+                                                <span>88</span>
+                                             </li>
+                                             <li>
+                                                <span>Тип клавиатуры</span>
+                                                <span>молоточковая</span>
+                                             </li>
+                                             <li>
+                                                <span>Полифония</span>
+                                                <span>256 голосов</span>
+                                             </li>
+                                             <li>
+                                                <span>Мощность</span>
+                                                <span>40 вт</span>
+                                             </li>
+                                             <li>
+                                                <span>Тон-генератор</span>
+                                                <span>ROS V.6 Plus</span>
+                                             </li>
+                                             <li>
+                                                <span>Автоаккомпанемент</span>
+                                                <span>40 стилей</span>
+                                             </li>
+                                             <li>
+                                                <span>Дисплей</span>
+                                                <span>Графический LCD 128x64 точек</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Количество клавиш</span>
+                                                <span>88</span>
+                                             </li>
+                                             <li>
+                                                <span>Тип клавиатуры</span>
+                                                <span>молоточковая</span>
+                                             </li>
+                                             <li>
+                                                <span>Полифония</span>
+                                                <span>256 голосов</span>
+                                             </li>
+                                             <li>
+                                                <span>Мощность</span>
+                                                <span>40 вт</span>
+                                             </li>
+                                             <li>
+                                                <span>Тон-генератор</span>
+                                                <span>ROS V.6 Plus</span>
+                                             </li>
+                                             <li>
+                                                <span>Автоаккомпанемент</span>
+                                                <span>40 стилей</span>
+                                             </li>
+                                             <li>
+                                                <span>Дисплей</span>
+                                                <span>Графический LCD 128x64 точек</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="compare-page__section">
+                        <div class="compare-page__header active">
+                           <span class="txt-13">
+                              функции
+                           </span>
+                           <button>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                 fill="none">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.84866 7.88965C2.70665 7.74267 2.49902 7.50005 2.10547 7.02967L5.99895 3.00005L9.89244 7.02967C9.75043 7.17664 9.49902 7.5 9.14835 7.88965L5.99864 4.62994L2.84866 7.88965Z"
+                                    fill="#FF8522" />
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="compare-page__collapse collapse_show">
+                           <div class="compare-page__main">
+                              <div class="compare-page__chars">
+                                 <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Рекордер</span>
+                                                <span>2 дорожки x 5 песен</span>
+                                             </li>
+                                             <li>
+                                                <span>Демонстрационные произведения</span>
+                                                <span>50</span>
+                                             </li>
+                                             <li>
+                                                <span>Наслаивание тембров</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Разделение клавиатуры</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Транспонирование</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Подстройка высоты тона</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Режим Twin Piano</span>
+                                                <span>да</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Рекордер</span>
+                                                <span>2 дорожки x 5 песен</span>
+                                             </li>
+                                             <li>
+                                                <span>Демонстрационные произведения</span>
+                                                <span>50</span>
+                                             </li>
+                                             <li>
+                                                <span>Наслаивание тембров</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Разделение клавиатуры</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Транспонирование</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Подстройка высоты тона</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Режим Twin Piano</span>
+                                                <span>да</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Рекордер</span>
+                                                <span>2 дорожки x 5 песен</span>
+                                             </li>
+                                             <li>
+                                                <span>Демонстрационные произведения</span>
+                                                <span>50</span>
+                                             </li>
+                                             <li>
+                                                <span>Наслаивание тембров</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Разделение клавиатуры</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Транспонирование</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Подстройка высоты тона</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Режим Twin Piano</span>
+                                                <span>да</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Рекордер</span>
+                                                <span>2 дорожки x 5 песен</span>
+                                             </li>
+                                             <li>
+                                                <span>Демонстрационные произведения</span>
+                                                <span>50</span>
+                                             </li>
+                                             <li>
+                                                <span>Наслаивание тембров</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Разделение клавиатуры</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Транспонирование</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Подстройка высоты тона</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Режим Twin Piano</span>
+                                                <span>да</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Рекордер</span>
+                                                <span>2 дорожки x 5 песен</span>
+                                             </li>
+                                             <li>
+                                                <span>Демонстрационные произведения</span>
+                                                <span>50</span>
+                                             </li>
+                                             <li>
+                                                <span>Наслаивание тембров</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Разделение клавиатуры</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Транспонирование</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Подстройка высоты тона</span>
+                                                <span>да</span>
+                                             </li>
+                                             <li>
+                                                <span>Режим Twin Piano</span>
+                                                <span>да</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="compare-page__section">
+                        <div class="compare-page__header active">
+                           <span class="txt-13">
+                              полный обзор
+                           </span>
+                           <button>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                 fill="none">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.84866 7.88965C2.70665 7.74267 2.49902 7.50005 2.10547 7.02967L5.99895 3.00005L9.89244 7.02967C9.75043 7.17664 9.49902 7.5 9.14835 7.88965L5.99864 4.62994L2.84866 7.88965Z"
+                                    fill="#FF8522" />
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="compare-page__collapse collapse_show">
+                           <div class="compare-page__main">
+                              <div class="compare-page__chars">
+                                 <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                       <div class="swiper-slide">
+                                          <div class="product-videos__item">
+                                             <div class="product-video">
+                                                <video src="https://youtu.be/bRb8O4_pJo8"></video>
+                                                <button>
+                                                   <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                      height="16" viewBox="0 0 16 16" fill="none">
+                                                      <path d="M15 8L4.5 14.0622L4.5 1.93782L15 8Z" fill="white" />
+                                                   </svg>
+                                                   <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                      height="14" viewBox="0 0 12 14" fill="none">
+                                                      <path d="M4.5 14H0.5V0H4.5V14Z" fill="white" />
+                                                      <path d="M11.5 14H7.5V0H11.5V14Z" fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div class="product-videos__desc body-text">
+                                                <span style="color: #182126;">Как звучит</span>
+                                                <p style="color: rgba(0, 0, 0, 0.50);">Звук понятный, классический, но
+                                                   без
+                                                   каких-либо
+                                                   изысков и особенностей, после которых хочется сразу поделиться
+                                                   впечатлениями.
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="product-videos__item">
+                                             <div class="product-video">
+                                                <video src="https://youtu.be/bRb8O4_pJo8"></video>
+                                                <button>
+                                                   <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                      height="16" viewBox="0 0 16 16" fill="none">
+                                                      <path d="M15 8L4.5 14.0622L4.5 1.93782L15 8Z" fill="white" />
+                                                   </svg>
+                                                   <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                      height="14" viewBox="0 0 12 14" fill="none">
+                                                      <path d="M4.5 14H0.5V0H4.5V14Z" fill="white" />
+                                                      <path d="M11.5 14H7.5V0H11.5V14Z" fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div class="product-videos__desc body-text">
+                                                <span style="color: #182126;">Как звучит</span>
+                                                <p style="color: rgba(0, 0, 0, 0.50);">Звук понятный, классический, но
+                                                   без
+                                                   каких-либо
+                                                   изысков и особенностей, после которых хочется сразу поделиться
+                                                   впечатлениями.
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="product-videos__item">
+                                             <div class="product-video">
+                                                <video src="https://youtu.be/bRb8O4_pJo8"></video>
+                                                <button>
+                                                   <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                      height="16" viewBox="0 0 16 16" fill="none">
+                                                      <path d="M15 8L4.5 14.0622L4.5 1.93782L15 8Z" fill="white" />
+                                                   </svg>
+                                                   <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                      height="14" viewBox="0 0 12 14" fill="none">
+                                                      <path d="M4.5 14H0.5V0H4.5V14Z" fill="white" />
+                                                      <path d="M11.5 14H7.5V0H11.5V14Z" fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div class="product-videos__desc body-text">
+                                                <span style="color: #182126;">Как звучит</span>
+                                                <p style="color: rgba(0, 0, 0, 0.50);">Звук понятный, классический, но
+                                                   без
+                                                   каких-либо
+                                                   изысков и особенностей, после которых хочется сразу поделиться
+                                                   впечатлениями.
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="product-videos__item">
+                                             <div class="product-video">
+                                                <video src="https://youtu.be/bRb8O4_pJo8"></video>
+                                                <button>
+                                                   <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                      height="16" viewBox="0 0 16 16" fill="none">
+                                                      <path d="M15 8L4.5 14.0622L4.5 1.93782L15 8Z" fill="white" />
+                                                   </svg>
+                                                   <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                      height="14" viewBox="0 0 12 14" fill="none">
+                                                      <path d="M4.5 14H0.5V0H4.5V14Z" fill="white" />
+                                                      <path d="M11.5 14H7.5V0H11.5V14Z" fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div class="product-videos__desc body-text">
+                                                <span style="color: #182126;">Как звучит</span>
+                                                <p style="color: rgba(0, 0, 0, 0.50);">Звук понятный, классический, но
+                                                   без
+                                                   каких-либо
+                                                   изысков и особенностей, после которых хочется сразу поделиться
+                                                   впечатлениями.
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <div class="product-videos__item">
+                                             <div class="product-video">
+                                                <video src="https://youtu.be/bRb8O4_pJo8"></video>
+                                                <button>
+                                                   <svg class="play" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                      height="16" viewBox="0 0 16 16" fill="none">
+                                                      <path d="M15 8L4.5 14.0622L4.5 1.93782L15 8Z" fill="white" />
+                                                   </svg>
+                                                   <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="12"
+                                                      height="14" viewBox="0 0 12 14" fill="none">
+                                                      <path d="M4.5 14H0.5V0H4.5V14Z" fill="white" />
+                                                      <path d="M11.5 14H7.5V0H11.5V14Z" fill="white" />
+                                                   </svg>
+                                                </button>
+                                             </div>
+                                             <div class="product-videos__desc body-text">
+                                                <span style="color: #182126;">Как звучит</span>
+                                                <p style="color: rgba(0, 0, 0, 0.50);">Звук понятный, классический, но
+                                                   без
+                                                   каких-либо
+                                                   изысков и особенностей, после которых хочется сразу поделиться
+                                                   впечатлениями.
+                                                </p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="compare-page__section">
+                        <div class="compare-page__header active">
+                           <span class="txt-13">
+                              о модели
+                           </span>
+                           <button>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                 fill="none">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.84866 7.88965C2.70665 7.74267 2.49902 7.50005 2.10547 7.02967L5.99895 3.00005L9.89244 7.02967C9.75043 7.17664 9.49902 7.5 9.14835 7.88965L5.99864 4.62994L2.84866 7.88965Z"
+                                    fill="#FF8522" />
+                              </svg>
+                           </button>
+                        </div>
+                        <div class="compare-page__collapse collapse_show">
+                           <div class="compare-page__main">
+                              <div class="compare-page__chars">
+                                 <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Габариты</span>
+                                                <span>1440 x 440 x 885 мм</span>
+                                             </li>
+                                             <li>
+                                                <span>Вес</span>
+                                                <span>51 кг</span>
+                                             </li>
+                                             <li>
+                                                <span>Страна-производитель</span>
+                                                <span>Корея</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Габариты</span>
+                                                <span>1440 x 440 x 885 мм</span>
+                                             </li>
+                                             <li>
+                                                <span>Вес</span>
+                                                <span>51 кг</span>
+                                             </li>
+                                             <li>
+                                                <span>Страна-производитель</span>
+                                                <span>Корея</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Габариты</span>
+                                                <span>1440 x 440 x 885 мм</span>
+                                             </li>
+                                             <li>
+                                                <span>Вес</span>
+                                                <span>51 кг</span>
+                                             </li>
+                                             <li>
+                                                <span>Страна-производитель</span>
+                                                <span>Корея</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Габариты</span>
+                                                <span>1440 x 440 x 885 мм</span>
+                                             </li>
+                                             <li>
+                                                <span>Вес</span>
+                                                <span>51 кг</span>
+                                             </li>
+                                             <li>
+                                                <span>Страна-производитель</span>
+                                                <span>Корея</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <ul class="compare-page__list body-text">
+                                             <li>
+                                                <span>Габариты</span>
+                                                <span>1440 x 440 x 885 мм</span>
+                                             </li>
+                                             <li>
+                                                <span>Вес</span>
+                                                <span>51 кг</span>
+                                             </li>
+                                             <li>
+                                                <span>Страна-производитель</span>
+                                                <span>Корея</span>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div class="modal rent-modal" id="removeCat">
+            <div class="modal__content rent-modal__content">
+               <div class="rent-modal__header">
+                  <span>удалить список</span>
+                  <button class="modal__close">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 5.5L14.8995 15.3995" stroke="#FF8522" stroke-width="1.35714" />
+                        <path d="M5 15.5L14.8995 5.60051" stroke="#FF8522" stroke-width="1.35714" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="remove-modal__main">
+                  <p class="body-text">
+                     Вы действительно хотите удалить список товаров из сравнения?
+                  </p>
+                  <ul class="remove-modal__btns">
+                     <li>
+                        <button class="btn transparent">
+                           <p>отмена</p>
+                           <p>
+                              <span>отмена</span>
+                           </p>
+                        </button>
+                     </li>
+                     <li>
+                        <button class="btn">
+                           <p>удалить </p>
+                           <p>
+                              <span>удалить </span>
+                           </p>
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+   <script>
+      const favoritesSelect = new Select("#favorites-select", {
+         placeholder: "1234",
+         selectedId: "1234",
+         multi: false,
+         data: [
+            {
+               id: "1234",
+               value: "клавишные",
+            },
+            {
+               id: "12345",
+               value: "звук",
+            }
+         ],
+
+      });
+   </script>
+</body>
+
+</html>

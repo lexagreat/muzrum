@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Оформление</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="checkout-page">
+            <div class="container">
+               <div class="checkout-page__wrapper">
+                  <div class="checkout-page__main">
+                     <div class="checkout-page__header">
+                        <h2 class="h2 checkout-page__title">Оформление</h2>
+                        <ul class="checkout-page__info">
+                           <li>
+                              <div class="app-input"><input type="text" placeholder="Ваше имя"></div>
+                           </li>
+                           <li>
+                              <div class="app-input"><input type="text" placeholder="Фамилия"></div>
+                           </li>
+                           <li>
+                              <div class="app-input"><input type="text" placeholder="+ 7 (999) 999-99-99" data-phone>
+                              </div>
+                           </li>
+                           <li>
+                              <div class="app-input"><input type="text" placeholder="E-mail">
+                                 <span>e-mail нужен для отправки чеков</span>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="checkout-page__content">
+                        <div class="checkout-page__block">
+                           <h5 class="h5 checkout-page__subtitle">Данные для доставки</h5>
+                           <div class="checkout-page__delivery">
+                              <div class="app-input" style="position:relative;">
+                                 <input type="text" value="" id="city_name">
+                                 <input type="text" value="" class="addresinput" placeholder="город">
+                                 <div class="address-dropdown hidden-block"></div>
+                              </div>
+                              <span>укажите город и мы покажем доступные способы получения заказа </span>
+                           </div>
+                        </div>
+                        <div class="checkout-page__block checkout-delivery">
+                           <h5 class="h5 checkout-page__subtitle">Для вашего города</h5>
+                           <ul class="checkout-delivery__radios">
+                              <li>
+                                 <label>
+                                    <input checked type="radio" name="checkout-delivery" value="0">
+                                    <div class="icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path
+                                             d="M6.04306 11.387C6.12585 11.4192 6.21155 11.4353 6.30017 11.4353C6.38879 11.4353 6.47449 11.4192 6.55727 11.387C6.64005 11.3553 6.72018 11.3021 6.79766 11.2274L12.801 5.44265L11.8227 4.5L6.3336 9.78929L4.0117 7.55193L3 8.5268L5.80267 11.2274C5.88015 11.3021 5.96028 11.3553 6.04306 11.387Z"
+                                             fill="white" />
+                                       </svg>
+                                    </div>
+                                    <div class="checkout-delivery__main">
+                                       <span class="body-text">
+                                          Курьер ТК
+                                       </span>
+                                       <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                                       <p class="caption">
+                                          Менеджер Музрум свяжется с вами в день отправки и вышлет вам код для
+                                          отслеживания заказа
+                                       </p>
+                                    </div>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input type="radio" name="checkout-delivery" value="1">
+                                    <div class="icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path
+                                             d="M6.04306 11.387C6.12585 11.4192 6.21155 11.4353 6.30017 11.4353C6.38879 11.4353 6.47449 11.4192 6.55727 11.387C6.64005 11.3553 6.72018 11.3021 6.79766 11.2274L12.801 5.44265L11.8227 4.5L6.3336 9.78929L4.0117 7.55193L3 8.5268L5.80267 11.2274C5.88015 11.3021 5.96028 11.3553 6.04306 11.387Z"
+                                             fill="white" />
+                                       </svg>
+                                    </div>
+                                    <div class="checkout-delivery__main">
+                                       <span class="body-text">
+                                          Курьер Музрум
+                                       </span>
+                                       <span class="caption" style="color: #FF8522;">1 800 ₽</span>
+                                       <p class="caption">
+                                          Менеджер Музрум свяжется с вами в ближайшее время для согласования удобного
+                                          дня и времени доставки
+                                       </p>
+                                    </div>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input type="radio" name="checkout-delivery" value="2">
+                                    <div class="icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path
+                                             d="M6.04306 11.387C6.12585 11.4192 6.21155 11.4353 6.30017 11.4353C6.38879 11.4353 6.47449 11.4192 6.55727 11.387C6.64005 11.3553 6.72018 11.3021 6.79766 11.2274L12.801 5.44265L11.8227 4.5L6.3336 9.78929L4.0117 7.55193L3 8.5268L5.80267 11.2274C5.88015 11.3021 5.96028 11.3553 6.04306 11.387Z"
+                                             fill="white" />
+                                       </svg>
+                                    </div>
+                                    <div class="checkout-delivery__main">
+                                       <span class="body-text">
+                                          Самовывоз из ПВЗ
+                                       </span>
+                                       <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                                       <p class="caption">
+                                          Менеджер Музрум свяжется с вами в день отправки и вышлет вам код для
+                                          отслеживания заказа
+                                       </p>
+                                    </div>
+                                 </label>
+                              </li>
+                              <li>
+                                 <label>
+                                    <input type="radio" name="checkout-delivery" value="3">
+                                    <div class="icon">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path
+                                             d="M6.04306 11.387C6.12585 11.4192 6.21155 11.4353 6.30017 11.4353C6.38879 11.4353 6.47449 11.4192 6.55727 11.387C6.64005 11.3553 6.72018 11.3021 6.79766 11.2274L12.801 5.44265L11.8227 4.5L6.3336 9.78929L4.0117 7.55193L3 8.5268L5.80267 11.2274C5.88015 11.3021 5.96028 11.3553 6.04306 11.387Z"
+                                             fill="white" />
+                                       </svg>
+                                    </div>
+                                    <div class="checkout-delivery__main">
+                                       <span class="body-text">
+                                          Самовывоз из шоурума
+                                       </span>
+                                       <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                                       <p class="caption">
+                                          Менеджер Музрум свяжется с вами в ближайшее время для согласования удобного
+                                          дня и
+                                          времени самовывоза
+                                       </p>
+
+                                    </div>
+                                 </label>
+                              </li>
+                           </ul>
+                           <div class="checkout-delivery__content">
+                              <div data-tab="0" class="active">
+                                 <ul class="checkout-delivery__inputs">
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="Улица">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="дом">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="квартира">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="ПОдъезд">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="этаж">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="домофон">
+                                       </div>
+                                    </li>
+                                    <li class="full">
+                                       <div class="app-input">
+                                          <textarea name="" id="" placeholder="комментарий"></textarea>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div data-tab="1">
+                                 <ul class="checkout-delivery__inputs">
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="Улица">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="дом">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="квартира">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="ПОдъезд">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="этаж">
+                                       </div>
+                                    </li>
+                                    <li>
+                                       <div class="app-input">
+                                          <input type="text" placeholder="домофон">
+                                       </div>
+                                    </li>
+                                    <li class="full">
+                                       <div class="app-input">
+                                          <textarea name="" id="" placeholder="комментарий"></textarea>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div data-tab="2">
+                                 <div class="checkout-delivery__pvz checkout-page__block">
+                                    <h5 class="h5 checkout-delivery__subtitle">Пункт выдачи</h5>
+                                    <a href="#deliveryModal" class="btn orange modal__link">
+                                       <p>Выбрать пункт выдачи</p>
+                                       <p>
+                                          <span>Выбрать пункт выдачи</span>
+                                       </p>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div data-tab="3">
+                                 <div class="checkout-delivery__showroom checkout-page__block">
+                                    <h5 class="h5 checkout-page__subtitle">Адрес</h5>
+                                    <ul>
+                                       <li>
+                                          <label>
+                                             <input type="radio" name="checkout-showroom" value="0">
+                                             <span class="body-text">Музрум</span>
+                                             <span style="color: rgba(0, 0, 0, 0.50);" class="caption">г. Москва,
+                                                ул.
+                                                Зоологическая, д.3</span>
+                                          </label>
+
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="checkout-page__block">
+                           <h5 class="h5 checkout-page__subtitle">Этапы доставки</h5>
+                           <ol class="checkout-page__steps body-text">
+                              <li>Доставляем заказ в ТК </li>
+                              <li>ТК везет заказ в ваш город </li>
+                              <li>Звонок менеджера ТК для согласования дня и времени доставки </li>
+                              <li>Доставка заказа</li>
+                           </ol>
+                        </div>
+                        <div class="checkout-page__block checkout-payment">
+                           <h5 class="h5 checkout-page__subtitle">Способ оплаты</h5>
+                           <ul class="checkout-payment__list">
+                              <label><input checked type="radio" name="checkout-payment" value="0">онлайн-оплата</label>
+                              <label><input type="radio" name="checkout-payment" value="1">рассрочка</label>
+                              <label><input type="radio" name="checkout-payment" value="2">кредит</label>
+                           </ul>
+                           <p>
+                              Вы можете оплатить заказ картой любого банка без <br> комиссии или через  СБП
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="checkout-page__aside checkout-aside">
+                     <div class="checkout-aside__header">
+                        <span class="txt-13">
+                           Ваш заказ
+                        </span>
+                        <button class="body-text">
+                           Изменить
+                        </button>
+                     </div>
+                     <ul class="checkout-aside__items">
+                        <li class="checkout-aside__product checkout-product">
+                           <div class="checkout-product__image">
+                              <img src="img/checkout/product.png" alt="">
+                           </div>
+                           <div class="checkout-product__main">
+                              <span class="body-text">Цифровое пианино Medeli SP201 BK</span>
+                              <p class="checkout-product__price price-text">
+                                 <span style="text-decoration: line-through;">64 559 ₽</span>
+                                 <span style="color: #FF8522;">58 690 ₽</span>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="checkout-aside__product checkout-product">
+                           <div class="checkout-product__image">
+                              <img src="img/checkout/product.png" alt="">
+                           </div>
+                           <div class="checkout-product__main">
+                              <span class="body-text">Цифровое пианино Medeli SP201 BK</span>
+                              <p class="checkout-product__price price-text">
+                                 <span style="text-decoration: line-through;">64 559 ₽</span>
+                                 <span style="color: #FF8522;">58 690 ₽</span>
+                              </p>
+                           </div>
+                        </li>
+                        <li class="checkout-aside__product checkout-product">
+                           <div class="checkout-product__image">
+                              <img src="img/checkout/product.png" alt="">
+                           </div>
+                           <div class="checkout-product__main">
+                              <span class="body-text">Цифровое пианино Medeli SP201 BK</span>
+                              <p class="checkout-product__price price-text">
+                                 <span>64 559 ₽</span>
+                              </p>
+                           </div>
+                        </li>
+                     </ul>
+                     <div class="cart-aside__promo checkout-aside__promo">
+                        <div class="loader"></div>
+                        <div class="app-input">
+                           <input type="text" placeholder="Введите промокод">
+                           <ul>
+
+                              <li>
+                                 <button class="cart-aside__clear">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path d="M7 8L16 16.9095M7 17L16 8.09045" stroke="#182126"
+                                          stroke-width="1.35714" />
+                                    </svg>
+                                 </button>
+                              </li>
+                              <li>
+                                 <button class="cart-aside__next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M14.1091 12.2366L9 7.75948L9.97165 7L16 12.2826L9.94382 17L9.02783 16.1945L14.1091 12.2366Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </li>
+                           </ul>
+
+                        </div>
+                     </div>
+                     <div class="checkout-aside__main">
+                        <ul>
+                           <li>
+                              <span>Сумма заказа</span>
+                              <span>259 018 ₽</span>
+                           </li>
+                           <li>
+                              <span>Скидка</span>
+                              <span style="color: #FF8522;">11 738 ₽</span>
+                           </li>
+                           <li>
+                              <span>Скидка по промокоду</span>
+                              <span style="color: #FF8522;">1000 ₽</span>
+                           </li>
+                           <li>
+                              <span>Доставка</span>
+                              <span>0 ₽</span>
+                           </li>
+                        </ul>
+                        <p>
+                           <span>Итого к оплате</span>
+                           <span>246 280 ₽</span>
+                        </p>
+                     </div>
+                     <div class="checkout-aside__footer">
+                        <button class="btn orange disabled">
+                           <p>оформить заказ</p>
+                           <p>
+                              <span>оформить заказ</span>
+                           </p>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div id="deliveryModal" class="modal delivery-modal">
+            <div class="modal__content delivery-modal__content">
+               <div class="delivery-modal__map"></div>
+               <div class="delivery-modal__search">
+                  <div class="app-input">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M6.01629 6.01785C7.21225 4.82189 8.83433 4.15 10.5257 4.15C12.217 4.15 13.8391 4.82189 15.0351 6.01785C16.231 7.21382 16.9029 8.83589 16.9029 10.5272C16.9029 12.0005 16.3931 13.4212 15.4712 14.5535L20.1177 19.2L19.1984 20.1192L14.552 15.4728C13.4197 16.3947 11.999 16.9045 10.5257 16.9045C8.83433 16.9045 7.21225 16.2326 6.01629 15.0366C4.82032 13.8407 4.14844 12.2186 4.14844 10.5272C4.14844 8.83589 4.82032 7.21382 6.01629 6.01785ZM10.5257 5.45C9.17911 5.45 7.8877 5.98492 6.93553 6.93709C5.98336 7.88926 5.44844 9.18067 5.44844 10.5272C5.44844 11.8738 5.98336 13.1652 6.93553 14.1174C7.8877 15.0696 9.17911 15.6045 10.5257 15.6045C11.8722 15.6045 13.1637 15.0696 14.1158 14.1174C15.068 13.1652 15.6029 11.8738 15.6029 10.5272C15.6029 9.18067 15.068 7.88926 14.1158 6.93709C13.1637 5.98492 11.8722 5.45 10.5257 5.45Z"
+                           fill="#182126" />
+                     </svg>
+                     <input type="text" placeholder="адрес или объект">
+                     <button class="icon-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                           <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M16.6156 6.39607L8.17326 6.39547L8.17335 5.14547L18.1245 5.14618C18.4696 5.1462 18.7494 5.42605 18.7494 5.77122L18.7487 15.7223L17.4987 15.7222L17.4993 7.28017L6.03502 18.7445L5.15113 17.8606L16.6156 6.39607Z"
+                              fill="#182126" />
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+               <div class="delivery-modal__select">
+                  <div class="delivery-modal__tabs">
+                     <div class="delivery-modal__header">
+                        <span class="txt-13">Выбор пункта выдачи</span>
+                        <button class="modal__close">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                              fill="none">
+                              <path d="M7 7.00008L17 16.8996M7 17.0001L17 7.10059" stroke="#FF8522"
+                                 stroke-width="1.35714" />
+                           </svg>
+                     </div>
+                     <ul>
+                        <li>
+                           <label>
+                              <input type="radio" name="delivery-modal" value="0">
+                              на карте
+                           </label>
+                        </li>
+                        <li>
+                           <label>
+                              <input checked type="radio" name="delivery-modal" value="1">
+                              список
+                           </label>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="delivery-modal__main">
+                     <div class="delivery-modal__selector">
+                        <div class="app-select" id="deliveryModalSelect"></div>
+                     </div>
+                     <ul class="delivery-modal__list scrollbar-none">
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="pvz-card">
+                           <div class="pvz-card__header">
+                              <div class="pvz-card__left">
+                                 <span class="body-text">CDEK</span>
+                                 <p class="caption" style="color: #00000080;">
+                                    <span>ул. Гурьянова, 30</span><br>
+                                    <span>среда, 12 марта</span>
+                                 </p>
+                                 <span class="caption" style="color: #FF8522;">Бесплатно</span>
+                              </div>
+                              <div class="pvz-card__right">
+                                 <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                       fill="none">
+                                       <path
+                                          d="M15 12.2831L9.73688 17L9.02309 16.1893L13.4328 12.2355L9 7.76622L9.75997 7L15 12.2831Z"
+                                          fill="#182126" />
+                                    </svg>
+                                 </button>
+                              </div>
+                           </div>
+                           <div class="pvz-card__collapse collapse">
+                              <div class="pvz-card__content">
+                                 <p>
+                                    <span>Режим работы: </span><br>
+                                    <span>Пн-Пт 10:00-21:00, Сб-Вс 10:00-18:00</span>
+                                 </p>
+                                 <button class="icon-btn">
+                                    <span>привезти сюда</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+
+   <script>
+      class DadataAutocomplete {
+         constructor({
+            inputSelector,
+            dropdownSelector,
+            token,
+            apiUrl = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+            minInputLength = 3,
+            resultCount = 5,
+            getRegion = () => document.getElementById("city_name")?.value || "",
+            excludeRegion = false
+         }) {
+            this.input = document.querySelector(inputSelector);
+            this.dropdown = document.querySelector(dropdownSelector);
+            this.token = token;
+            this.apiUrl = apiUrl;
+            this.minInputLength = minInputLength;
+            this.resultCount = resultCount;
+            this.getRegion = getRegion;
+            this.excludeRegion = excludeRegion;
+            this.abortController = null;
+
+            if (!this.input || !this.dropdown) {
+               console.error("Invalid selectors provided.");
+               return;
+            }
+            this.init();
+         }
+
+         fetchSuggestions = async (query) => {
+            if (this.abortController) this.abortController.abort();
+            this.abortController = new AbortController();
+
+            try {
+               const response = await fetch(this.apiUrl, {
+                  method: "POST",
+                  headers: {
+                     "Content-Type": "application/json",
+                     "Accept": "application/json",
+                     "Authorization": `Token ${this.token}`,
+                  },
+                  body: JSON.stringify({ query, count: this.resultCount }),
+                  signal: this.abortController.signal,
+               });
+
+               if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+               const { suggestions } = await response.json();
+               this.renderDropdown(suggestions);
+            } catch (error) {
+               if (error.name !== "AbortError") console.error("Error fetching suggestions:", error);
+            }
+         };
+
+         renderDropdown = (suggestions) => {
+            this.dropdown.innerHTML = suggestions.length
+               ? `<ul>${suggestions.map(({ value }) => {
+                  const displayValue = this.excludeRegion ? value.replace(/^[^,]+,\s*/, "") : value;
+                  return `<li data-value="${displayValue}">${displayValue}</li>`;
+               }).join("")}</ul>`
+               : "<ul><li>Ничего не найдено</li></ul>";
+
+            this.dropdown.classList.remove("hidden-block");
+
+            this.dropdown.querySelectorAll("li").forEach(li => {
+               li.addEventListener("click", () => {
+                  this.input.value = li.dataset.value;
+                  this.dropdown.classList.add("hidden-block");
+               }, { once: true });
+            });
+         };
+
+         debounce = (func, delay) => {
+            let timeout;
+            return (...args) => {
+               clearTimeout(timeout);
+               timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+         };
+
+         init = () => {
+            this.input.addEventListener("input", this.debounce((e) => {
+               const query = `${this.getRegion()}, ${e.target.value}`;
+               if (e.target.value.length >= this.minInputLength) {
+                  this.fetchSuggestions(query);
+               } else {
+                  this.dropdown.classList.add("hidden-block");
+               }
+            }, 500));
+         };
+      }
+
+      window.initAddressAutocomplete = (options) => new DadataAutocomplete(options);
+
+      initAddressAutocomplete({
+         inputSelector: '.addresinput', // селектор поля
+         dropdownSelector: '.address-dropdown', // селектор блока
+         token: 'b0e9b6cf842ad5e27a812583467646b4c060aaf8',
+         minInputLength: 3, // минимальный запрос в символах
+         resultCount: 5, // кол-во результатов
+         getRegion: () => document.getElementById('city_name')?.value || '', // поле с городом
+
+      });
+   </script>
+</body>
+
+</html>

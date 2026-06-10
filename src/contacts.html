@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="overflow: hidden;background-color: #FCFCFC">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Контакты</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="contacts-page">
+            <div class="container">
+               <div class="contacts-page__wrapper">
+                  <h2 class="contacts-page__title h2">Контакты</h2>
+                  <div class="contacts-page__layout">
+                     <ul class="contacts-page__list">
+                        <li class="contacts-page__item h5">
+                           <span>Адрес</span>
+                           <ul>
+                              <li>Москва, ул. Зоологическая 3</li>
+                           </ul>
+                        </li>
+                        <li class="contacts-page__item h5">
+                           <span>График работы</span>
+                           <ul>
+                              <li>Пн - Вс 10:00 до 20:00</li>
+                           </ul>
+                        </li>
+                        <li class="contacts-page__item h5">
+                           <span>Связаться с нами</span>
+                           <ul>
+                              <li><a href="tel:+7 (499) 455-14-25">+7 (499) 455-14-25</a></li>
+                              <li><a href="#">Telegram</a></li>
+                              <li><a href="#">Whatsapp</a></li>
+                           </ul>
+                        </li>
+                        <li class="contacts-page__item h5">
+                           <span>Мы в соцсетях</span>
+                           <ul>
+                              <li><a href="#" target="_blank">Telegram-канал</a></li>
+                              <li><a href="#" target="_blank">Instagram</a></li>
+                              <li><a href="#" target="_blank">Youtube</a></li>
+                              <li><a href="#" target="_blank">Dzen</a></li>
+                              <li><a href="#" target="_blank">Vk</a></li>
+                           </ul>
+                        </li>
+                        <li class="contacts-page__item">
+                           <span class="h5">Реквизиты</span>
+                           <button class="icon-btn">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.6263 17.9066L18.6136 12.0503L19.5 12.9175L12.4427 19.8204C12.1979 20.0599 11.801 20.0599 11.5563 19.8204L4.5 12.9165L5.38649 12.0494L11.3727 17.9063L11.3727 3L12.6263 3L12.6263 17.9066Z"
+                                    fill="white" />
+                                 <path d="M19.5 21.5V22.5L4.5 22.5L4.5 21.5L19.5 21.5Z" fill="white" />
+                              </svg>
+                              <span>скачать</span>
+                           </button>
+                        </li>
+                     </ul>
+                     <div class="contacts-page__action">
+                        <div class="contacts-page__form">
+                           <span class="contacts-page__subtitle">
+                              Бесплатно проконсультируем и поможем с выбором
+                           </span>
+                           <div class="contacts-page__footer">
+                              <ul class="contacts-page__inputs">
+                                 <li>
+                                    <div class="app-input">
+                                       <input type="text" placeholder="Ваше имя">
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="app-input">
+                                       <input type="text" placeholder="+ 7 (999) 999-99-99" data-phone>
+                                    </div>
+                                 </li>
+                              </ul>
+                              <button class="btn orange">
+                                 <p>оставить заявку</p>
+                                 <p>
+                                    <span>оставить заявку</span>
+                                 </p>
+                              </button>
+                              <div class="home-hero__check">
+                                 <label class="app-checkbox">
+                                    <div></div>
+                                    <input type="checkbox" value="1">
+                                 </label>
+                                 <span class="caption-text">
+                                    Согласен на обработку <a href="#" target="_blank">персональных данных</a>
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="contacts-page__map">
+                           <img src="img/map.png" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+   <!-- <button class="btn transparent">
+      <p>Показать все</p>
+      <p>
+         <span>Показать все</span>
+      </p>
+
+   </button> -->
+</body>
+
+</html>

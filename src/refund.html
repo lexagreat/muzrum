@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="background: #FCFCFC;">
+         <section class="breadcrumbs">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#" class="breadcrumbs__link">Помощь</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="help-page">
+            <div class="container">
+               <div class="help-page__wrapper">
+                  <aside class="help-page__aside">
+                     <ul class="scrollbar-none">
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="payment.html">Оплата</a></li>
+                        <li><a class="active" href="refund.html">Возврат</a></li>
+                        <li><a href="garanties.html">Гарантии</a></li>
+                     </ul>
+                  </aside>
+                  <div class="help-page__main">
+                     <div class="help-page__block">
+                        <h3 class="h3">Возврат и обмен</h3>
+                        <div class="help-page__subblock">
+                           <p class="body-text" style="color: #4D4D4D;">У вас есть 14 дней после покупки на возврат или
+                              обмен товара ненадлежащего качества.
+                              Это работает при таких условиях:</p>
+                           <ul class="refund-page__list">
+                              <li>
+                                 <img src="img/catalog/rent/hero-icon.svg" alt="">
+                                 <h5 class="h5">1. Вы сохранили заводскую упаковку и чек</h5>
+                                 <p>Сохранены все этикетки, ярлыки и прочая заводская маркировка</p>
+                              </li>
+                              <li>
+                                 <img src="img/catalog/rent/hero-icon.svg" alt="">
+                                 <h5 class="h5">2. Товар не имеет следов эксплуатации </h5>
+                                 <p>Отсутствуют царапины, потертости и загрязнения</p>
+                              </li>
+                              <li>
+                                 <img src="img/catalog/rent/hero-icon.svg" alt="">
+                                 <h5 class="h5">3. Комплектация товара не нарушена</h5>
+                                 <p>Упаковка и комплектующие не имеют повреждений</p>
+                              </li>
+                              <li>
+                                 <img src="img/catalog/rent/hero-icon.svg" alt="">
+                                 <h5 class="h5">4. Заявление на возврат оформлено</h5>
+                                 <p>Вы заявили нам о намерении вернуть или обменять инструмент в письменной форме
+                                    не позднее 7 дней с момента получения инструмента</p>
+                              </li>
+                           </ul>
+
+                        </div>
+
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+
+
+</body>
+
+</html>

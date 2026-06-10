@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"МУЗРУМ",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="main white-header" style="overflow: hidden;background-color: #F2F2F2">
+
+         <section class="error-page">
+            <div class="error-page__visual">
+               <img src="img/error.svg" alt="">
+
+            </div>
+            <div class="container">
+               <div class="error-page__main">
+                  <div class="error-page__text">
+                     <h2 class="h2">
+                        Ошибка 404: <br>
+                        Страница не найдена
+                     </h2>
+                     <p class="body-text">К сожалению, такой страницы не существует <br> или она была удалена</p>
+                  </div>
+                  <ul class="error-page__buttons">
+                     <li>
+                        <a href="#" class="btn">
+                           <p>в каталог</p>
+                           <p>
+                              <span>в каталог</span>
+                           </p>
+
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" class="btn transparent">
+                           <p>На главную</p>
+                           <p>
+                              <span>На главную</span>
+                           </p>
+
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+   <!-- <button class="btn transparent">
+      <p>Показать все</p>
+      <p>
+         <span>Показать все</span>
+      </p>
+
+   </button> -->
+</body>
+
+</html>
